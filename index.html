@@ -308,7 +308,7 @@
   .chip:hover { color: var(--ink); }
   .chip[aria-pressed="true"] { color: var(--ink); border-bottom-color: var(--accent); }
 
-  .card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(36px, 5vw, 68px) clamp(24px, 4vw, 56px); }
+  .card-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(36px, 5vw, 68px) clamp(24px, 4vw, 56px); }
   .card { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
   .card-thumb { display: block; border: 1px solid var(--line); background: var(--surface); }
   .card-thumb:hover { border-color: var(--ink); }
@@ -540,7 +540,7 @@
         <div class="filters">
           <div class="search-row">
             <input class="search" type="search" id="project-search" placeholder="Search projects, methods, or datasets…" aria-label="Search projects">
-            <span class="result-count" id="project-count" aria-live="polite">5 projects</span>
+            <span class="result-count" id="project-count" aria-live="polite">3 projects</span>
           </div>
           <div class="tag-row" role="group" aria-label="Filter projects by theme">
             <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
@@ -574,16 +574,6 @@
             <a class="card-cta" href="https://sophiaesiegel.github.io/shore-check/" target="_blank" rel="noopener">Open the live app</a>
           </article>
 
-          <article class="card" data-tags="ocean,climate,suitability,remote-sensing">
-            <a class="card-thumb" href="#gis-ocean-carbon" tabindex="-1" aria-hidden="true">
-              <img src="assets/img/ocean-cdr-thumb.png" alt="" loading="lazy">
-            </a>
-            <h3><a href="#gis-ocean-carbon">Where Could the Ocean Take Up More Carbon?</a></h3>
-            <p class="card-desc">Two global suitability indices for marine carbon removal — iron fertilization and ocean alkalinity enhancement — mapped on a common scale. Each covers about a fifth of the ocean. They overlap on 3.39% of it.</p>
-            <div class="card-tags"><span>ArcGIS Pro</span><span>Earth Engine</span><span>Copernicus</span><span>Fuzzy overlay</span></div>
-            <a class="card-cta" href="#gis-ocean-carbon">Read the project</a>
-          </article>
-
           <article class="card" data-tags="remote-sensing,climate,hazards">
             <a class="card-thumb" href="#gis-earth-engine" tabindex="-1" aria-hidden="true">
               <img src="assets/img/gee-keys-classification.png" alt="" loading="lazy">
@@ -594,17 +584,7 @@
             <a class="card-cta" href="#gis-earth-engine">Read the project</a>
           </article>
 
-          <article class="card" data-tags="ocean,climate,remote-sensing">
-            <a class="card-thumb" href="#gis-arctic-ice" tabindex="-1" aria-hidden="true">
-              <img src="assets/img/arctic-sst-thumb.png" alt="" loading="lazy">
-            </a>
-            <h3><a href="#gis-arctic-ice">Arctic Sea Ice Decline with SST</a></h3>
-            <p class="card-desc">A quarter century of September sea ice minima set against mean sea surface temperature, drawn as a dark polar globe with the two records charted beneath it.</p>
-            <div class="card-tags"><span>Earth Engine</span><span>NOAA OISST</span><span>Global scene</span><span>Time series</span></div>
-            <a class="card-cta" href="#gis-arctic-ice">Read the project</a>
-          </article>
-
-        </div>
+</div>
 
         <p class="empty-state" id="project-empty" hidden>No projects match that search yet — try clearing the filters.</p>
       </div>
@@ -906,128 +886,7 @@ docs/
 
         <div class="pager">
           <a href="#gis-portfolio">All projects</a>
-          <a href="#gis-ocean-carbon">Next: Where Could the Ocean Take Up More Carbon? →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECT: OCEAN CARBON -->
-    <section id="gis-ocean-carbon" data-view="gis-ocean-carbon" hidden>
-      <div class="project">
-        <a class="back-link" href="#gis-portfolio">← All projects</a>
-        <span class="eyebrow">Ocean · Carbon removal</span>
-        <h1>Where Could the Ocean Take Up More Carbon?</h1>
-        <p class="lede">Ocean alkalinity enhancement and iron fertilization are both place-dependent, and they depend on different places. Mapping each globally on the same 0–1 scale shows how little ocean satisfies both — and why the choice is where, not which.</p>
-
-        <dl class="meta">
-          <div><dt>Role</dt><dd>Analysis, modeling, cartography</dd></div>
-          <div><dt>Tools</dt><dd>ArcGIS Pro, Google Earth Engine</dd></div>
-          <div><dt>Extent</dt><dd>Global, single-year snapshot</dd></div>
-          <div><dt>Status</dt><dd>In progress</dd></div>
-        </dl>
-
-        <figure class="fig">
-          <img src="assets/img/ocean-cdr-comparison.png" alt="Global map comparing HNLC-suitable, physically suitable, and jointly suitable ocean areas" loading="lazy">
-          <figcaption><b>Figure 1.</b> The two indices thresholded and overlaid. HNLC-suitable covers 21.38% of the ocean and physically suitable 20.58% — but only <b>3.39%</b> qualifies for both.</figcaption>
-        </figure>
-
-        <div class="prose">
-          <h2>The question</h2>
-          <p>Marine carbon removal is usually argued in the abstract — whether a method works, not where. <b>Ocean alkalinity enhancement</b> adds alkaline material to surface seawater so the ocean draws down more CO<sub>2</sub>; whether it works at a site is a question of <em>physics</em>, namely how long that alkalinity stays in contact with the atmosphere. <b>Iron fertilization</b> is a question of <em>biogeochemistry</em>: it does something only where surplus nutrients sit unused for want of iron.</p>
-
-          <h2>The headline result</h2>
-          <div class="callout">
-            <p class="kicker">Finding</p>
-            <p>Each index, thresholded, covers roughly a fifth of the world ocean — <strong>21.38%</strong> HNLC-suitable, <strong>20.58%</strong> physically suitable for alkalinity enhancement. Independence would predict about 4.4% overlap. They overlap on <strong>3.39%</strong>.</p>
-            <p>The two are close to spatially disjoint and mildly anti-correlated. The cold, high-nitrate, deep-mixed Southern Ocean that suits iron is largely the water whose deep mixed layers and fast currents make it poor for alkalinity. These are options for different oceans.</p>
-          </div>
-
-          <h2>Index 1 — Ocean alkalinity enhancement</h2>
-          <p>The controlling variable is circulation, not chemistry. Alkalinity only draws down carbon while it stays in the surface layer; diluted or subducted, the uptake never happens. <a href="https://doi.org/10.1038/s43247-025-02480-1" target="_blank" rel="noopener">Guo et al. (2025)</a>, from Heather Kim's group at WHOI, make this explicit — releasing passive dye tracers in a circulation model and scoring sites on spread, retention, gas transfer, and residence time.</p>
-          <p>That cannot run globally without a global circulation model, so this index uses static proxies for the same physics: <strong>mixed layer depth</strong> (shallow better), <strong>wind speed</strong> (higher drives gas transfer), <strong>surface current speed</strong> (slower better), <strong>bathymetry</strong> (shelves over abyss), and <strong>distance to shipping</strong>. Layers from GEBCO, the Copernicus physical reanalysis, ERA5 winds, and global maritime traffic.</p>
-        </div>
-
-        <figure class="fig" style="margin-top: 36px;">
-          <img src="assets/img/ocean-cdr-physical.png" alt="Global physical suitability index for ocean alkalinity enhancement" loading="lazy">
-          <figcaption><b>Figure 2.</b> Physical suitability for alkalinity enhancement. Shelves and mid-latitude margins score highest; the deep-mixed Southern Ocean scores poorly despite being the flagship region for iron.</figcaption>
-        </figure>
-
-        <div class="prose">
-          <h2>Index 2 — Iron fertilization in HNLC waters</h2>
-          <p>Roughly a third of the ocean is <strong>high-nutrient, low-chlorophyll</strong>: nitrate sits unused because iron limits growth. Twelve mesoscale enrichment experiments synthesised by <a href="https://doi.org/10.1126/science.1131669" target="_blank" rel="noopener">Boyd et al. (2007)</a> showed unambiguously that adding iron triggers a bloom there, following <a href="https://doi.org/10.1038/331341a0" target="_blank" rel="noopener">Martin &amp; Fitzwater (1988)</a>; <a href="https://doi.org/10.1038/ngeo1765" target="_blank" rel="noopener">Moore et al. (2013)</a> map where each kind of nutrient limitation falls.</p>
-          <p>What those experiments did <em>not</em> establish is durable storage — most bloom carbon was remineralised near the surface rather than exported. This index marks where the biological precondition holds, not where sequestration would succeed. It combines high surface nitrate, low chlorophyll, and low dissolved iron, all from the Copernicus biogeochemistry reanalysis (<code>GLOBAL_MULTIYEAR_BGC_001_029</code>).</p>
-        </div>
-
-        <figure class="fig" style="margin-top: 36px;">
-          <img src="assets/img/ocean-cdr-layout.png" alt="Global HNLC iron fertilization suitability index" loading="lazy">
-          <figcaption><b>Figure 3.</b> Iron fertilization suitability. The Southern Ocean, equatorial Pacific and subarctic North Pacific carry the signal — the same regions where the enrichment experiments were run.</figcaption>
-        </figure>
-
-        <div class="prose">
-          <h2>Method</h2>
-          <p>Each input is rescaled to a 0–1 membership surface with <strong>Fuzzy Membership</strong> — linear where more is better, inverted where less is, Gaussian for bathymetry where the optimum sits in the middle — then combined with <strong>Fuzzy Overlay</strong>. Building graded surfaces rather than threshold masks keeps visible how close each cell came to the cutoff; a binary map can still be produced afterwards, but the threshold stays an explicit choice.</p>
-          <p>Both indices are annual means for a single year, so seasonality is averaged out — a real limitation given that the Kim result is strongly seasonal. The HNLC index has a built-in sanity check: the Southern Ocean, equatorial Pacific, and subarctic North Pacific should light up while the subtropical gyres stay dark.</p>
-          <p>These are physical and biogeochemical surfaces only. Ecological consequence, governance, and monitoring are outside the frame, and all would narrow the bright areas considerably.</p>
-        </div>
-
-        <div class="pager">
-          <a href="#gis-portfolio">All projects</a>
           <a href="#gis-earth-engine">Next: Earth Engine Method Studies →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECT: ARCTIC ICE -->
-    <section id="gis-arctic-ice" data-view="gis-arctic-ice" hidden>
-      <div class="project">
-        <a class="back-link" href="#gis-portfolio">← All projects</a>
-        <span class="eyebrow">Ocean · Climate</span>
-        <h1>Arctic Sea Ice Decline with SST</h1>
-        <p class="lede">Sea surface temperature and Arctic sea ice extent, drawn together — a polar global scene with the two records running as time series beneath it.</p>
-
-        <dl class="meta">
-          <div><dt>Role</dt><dd>Analysis, cartography</dd></div>
-          <div><dt>Tools</dt><dd>Google Earth Engine, ArcGIS Pro</dd></div>
-          <div><dt>Extent</dt><dd>Arctic, EPSG:3413</dd></div>
-          <div><dt>Period</dt><dd>2001–2025</dd></div>
-        </dl>
-
-        <figure class="fig">
-          <img src="assets/img/arctic-sst-layout.png" alt="Dark polar globe showing September 2000 Arctic sea ice extent over sea surface temperature, with a chart of minimum ice extent and mean SST from 2001 to 2025" loading="lazy">
-          <figcaption><b>Figure 1.</b> A polar global scene showing September 2000 ice extent over sea surface temperature, with minimum ice extent (bars) and mean SST (line) charted from 2001 to 2025.</figcaption>
-        </figure>
-
-        <figure class="fig">
-          <video src="assets/video/ice-retreat.mp4" controls muted loop playsinline preload="metadata" poster="assets/img/arctic-sst-thumb.png">Your browser does not support embedded video.</video>
-          <figcaption><b>Figure 2.</b> Sea ice retreat animated across the record.</figcaption>
-        </figure>
-
-        <div class="prose">
-          <h2>The question</h2>
-          <p>Arctic sea ice loss is usually shown alone — a line going down. This puts the ice and the ocean underneath it in one frame, over the same period and the same projection.</p>
-
-          <h2>Data</h2>
-          <ul>
-            <li><strong>Sea surface temperature</strong> — NOAA OISST v2.1 (<code>NOAA/CDR/OISST/V2_1</code>) via Earth Engine, reduced to annual means and reprojected to EPSG:3413.</li>
-            <li><strong>Sea ice extent</strong> — monthly polygon feature class carrying year, month, area, and extent.</li>
-          </ul>
-
-          <h2>Method</h2>
-          <ol>
-            <li>Compute annual mean SST in Earth Engine; export as a multiband GeoTIFF, one band per year.</li>
-            <li>Build a polar Global Scene in ArcGIS Pro, so the Arctic reads as a cap on a sphere rather than a distorted rectangle.</li>
-            <li>Summarise ice to <strong>annual minimum</strong> extent — the September low is what tracks long-term loss, while an annual mean blends the winter maximum back in and damps the signal. Years without full monthly coverage are dropped, since an incomplete year returns a spuriously low minimum.</li>
-            <li>Chart both series beneath the scene on independent left and right axes.</li>
-          </ol>
-
-          <h2>What it shows</h2>
-          <p>From 2001 to 2025 minimum extent falls from roughly 6.8 to about 4.5 million km², with the 2012 collapse as the deepest trough. Mean SST rises a few tenths of a degree over the same window.</p>
-          <p>The two are not presented as a causal pair. Half a degree of averaged warming does not mechanically produce millions of km² of ice loss — that link runs through albedo feedback and ocean heat transport, neither of which appears here. The defensible claim is that the two records move together.</p>
-        </div>
-
-        <div class="pager">
-          <a href="#gis-earth-engine">← Earth Engine Method Studies</a>
-          <a href="#gis-portfolio">All projects →</a>
         </div>
       </div>
     </section>
@@ -1142,8 +1001,8 @@ docs/
         </div>
 
         <div class="pager">
-          <a href="#gis-ocean-carbon">← Where Could the Ocean Take Up More Carbon?</a>
-          <a href="#gis-arctic-ice">Next: Arctic Sea Ice Decline with SST →</a>
+          <a href="#gis-jakarta-cages">← Jakarta Bay Cage Detection</a>
+          <a href="#gis-portfolio">All projects →</a>
         </div>
       </div>
     </section>
@@ -1299,7 +1158,7 @@ docs/
 
 <script>
   (function () {
-    var routes = ['about', 'gis-portfolio', 'gis-jakarta-cages', 'gis-ocean-carbon', 'gis-arctic-ice', 'gis-earth-engine', 'visual-portfolio', 'highlighted-writings'];
+    var routes = ['about', 'gis-portfolio', 'gis-jakarta-cages', 'gis-earth-engine', 'visual-portfolio', 'highlighted-writings'];
     var views = document.querySelectorAll('[data-view]');
     var links = document.querySelectorAll('nav a[data-route]');
     var first = true;
