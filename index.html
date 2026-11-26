@@ -114,16 +114,24 @@
   /* About: three-column rows */
   .row {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.55fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr) minmax(0, 1fr);
     grid-template-areas: "left text right";
-    gap: clamp(20px, 3.5vw, 52px);
+    gap: clamp(18px, 2.6vw, 36px);
     align-items: start;
-    padding-top: 44px;
+    padding-top: 34px;
   }
   .col-text { grid-area: text; min-width: 0; max-width: 64ch; margin: 0 auto; }
   .col-left { grid-area: left; }
   .col-right { grid-area: right; }
-  .col-left, .col-right { display: flex; flex-direction: column; gap: 28px; min-width: 0; }
+  .col-left, .col-right { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+  .text-block + .text-block { margin-top: 0; }
+  @media (min-width: 901px) {
+    #about .row { align-items: stretch; }
+    #about .col-left, #about .col-right, #about .col-text { justify-content: space-between; gap: 28px; }
+    #about .col-text { display: flex; flex-direction: column; position: static; font-size: 1.04em; }
+  }
+  .col-right figure:has(.loop-video) { width: 72%; margin-left: auto; margin-right: auto; }
+  @media (min-width: 901px) { .col-text { position: sticky; top: 24px; } }
 
   h2 {
     font-family: var(--display);
@@ -444,32 +452,12 @@
   <main>
     <!-- ABOUT -->
     <section id="about" data-view="about">
-      <!-- Row 1: Profile -->
       <div class="row">
         <div class="col-left">
           <figure>
             <img src="assets/img/sophia-ms-graduation.jpg" alt="Sophia smiling under a stone arcade at Stanford, wearing a white dress and a red graduation stole" style="height: auto; aspect-ratio: auto; object-fit: contain;">
             <figcaption>Sophia very joyous to complete her MS degree in Stanford, CA. Photo credit: Phil Roberge</figcaption>
           </figure>
-        </div>
-        <div class="col-text">
-          <h2>Profile</h2>
-          <p>Sophia Siegel is a recent M.S. graduate of the Stanford Doerr School and an aspiring public health changemaker. Through a combination of technical science, communication, and creativity, she hopes to transform human-environmental systems to mutually benefit nature and underrepresented communities.</p>
-          <p>Sophia has relocated to Boston, MA, where she assists research at the Harvard Chan School of Public Health. Her key research interests revolve around food systems, blue foods, remote sensing, AI for Earth, natural capital, and the impacts of climate change on the Global South.</p>
-        </div>
-        <div class="col-right">
-          <figure>
-            <a class="video-link" href="https://www.youtube.com/watch?v=_4dhLL2egZ0" target="_blank" rel="noopener" aria-label="Watch Field Notes from Palau on YouTube">
-              <img src="assets/img/palau-field-notes.jpg" alt="Field Notes from Palau: Navigating ocean policy in Palau, video thumbnail" style="height: auto; aspect-ratio: auto; object-fit: contain;">
-            </a>
-            <figcaption>Field Notes from Palau | Navigating Ocean Policy. Now the most-viewed video of all time on the Stanford Woods Institute Youtube channel</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <!-- Row 2: Current research interests -->
-      <div class="row">
-        <div class="col-left">
           <figure>
             <img src="assets/img/fishing-intensity-change.png" alt="World map of change in fishing intensity from 2015 to 2024, shown as hexagons from blue (decrease) to dark red (increase), with FAO fishing areas outlined and numbered" style="height: auto; aspect-ratio: auto; object-fit: contain;" loading="lazy">
             <figcaption>Change in fishing intensity over time. Produced in ArcGIS Pro by Sophia Siegel and Diana Moanga</figcaption>
@@ -478,14 +466,46 @@
             <img src="assets/img/jakarta-bay-aquaculture.png" alt="Classification map of Jakarta Bay in red and navy showing cage and pond aquaculture" style="height: auto; aspect-ratio: auto; object-fit: contain;" loading="lazy">
             <figcaption>Using deep learning to classify cage and pond aquaculture in Jakarta Bay</figcaption>
           </figure>
+          <figure>
+            <img src="assets/img/showjumping-santa-anita-2025.jpg" alt="Sophia jumping a horse over a Split Rock Jumping Tour fence in the rain at Santa Anita, 2025" style="height: auto; aspect-ratio: auto; object-fit: contain;" loading="lazy">
+            <figcaption>Sophia qualifying for World Cup Finals in Santa Anita, 2025</figcaption>
+          </figure>
+          <figure>
+            <a href="https://kronprinshaakon.hi.no/" target="_blank" rel="noopener" aria-label="Visit the Kronprins Haakon research vessel website">
+              <img src="assets/img/kronprins-haakon.png" alt="The research vessel Kronprins Haakon, with a dark hull and white superstructure, sitting in sea ice" style="height: auto; aspect-ratio: auto; object-fit: contain;" loading="lazy">
+            </a>
+            <figcaption><a href="https://kronprinshaakon.hi.no/" target="_blank" rel="noopener">Kronprins Haakon</a> Polar Research Vessel, where Sophia will live and work from Feb-Mar 2027.</figcaption>
+          </figure>
         </div>
         <div class="col-text">
+          <div class="text-block">
+          <h2>Profile</h2>
+          <p>Sophia Siegel is a recent M.S. graduate of the Stanford Doerr School and an aspiring public health changemaker. Through a combination of technical science, communication, and creativity, she hopes to transform human-environmental systems to mutually benefit nature and underrepresented communities.</p>
+          <p>Sophia has relocated to Boston, MA, where she assists research at the Harvard Chan School of Public Health. Her key research interests revolve around food systems, blue foods, remote sensing, AI for Earth, natural capital, and the impacts of climate change on the Global South.</p>
+          </div>
+          <div class="text-block">
           <h2>Current Research Interests</h2>
           <p>Sophia's current work uses cutting-edge technology to measure our natural resources, with an emphasis on climate-driven health impacts in coastal regions. She is especially interested in harnessing satellite data to model global fisheries and monitor marine biogeochemical cycles with implications for food safety.</p>
           <p>She currently collaborates with the Golden Lab's Planetary Health Research Group to distinguish harmful from non-harmful algal blooms and design early warning systems using machine learning.</p>
           <p>At the heart of Sophia's work is a passion for working with communities to design solutions that serve policy and livelihoods.</p>
+          </div>
+          <div class="text-block">
+          <h2>Miscellaneous</h2>
+          <ul>
+            <li>Sophia has represented <a href="https://www.usef.org/media/press-releases/us-equestrian-announces-athletes-for-2024-fei" target="_blank" rel="noopener">Team USA Equestrian</a> on World Cup and Nations Cup teams internationally, consistently ranking among the top showjumping athletes globally from 2021-2024. She retired from professional horse sport in 2025 to pursue a career in academia.</li>
+            <li>In February Sophia will accompany <a href="https://npolar.no/en/fact/bouveco/" target="_blank" rel="noopener">BOUVECO</a>, a <a href="https://npolar.no/en/programmes/" target="_blank" rel="noopener">Norwegian Polar Institute-led expedition</a> to Bouvetøya, the most remote island in the world! She'll conduct research that features hyperspectral satellite data to discern phytoplankton ecology.</li>
+            <li>Sophia's honors thesis titled, <a href="https://searchworks.stanford.edu/view/vn313hw1709" target="_blank" rel="noopener">Assessing Barriers to California's Coastal Mariculture Economy: A Stakeholder Perspective Analysis</a>, won the Earth Systems Award for Outstanding Research, 2025</li>
+            <li>Sophia is an avid backpacker, traveler and photographer. Her work has received honorable mention in the <a href="https://news.stanford.edu/stories/2026/04/doerr-photo-contest-sustainability-winners" target="_blank" rel="noopener">Doerr School annual photo contest</a>.</li>
+          </ul>
+          </div>
         </div>
         <div class="col-right">
+          <figure>
+            <a class="video-link" href="https://www.youtube.com/watch?v=_4dhLL2egZ0" target="_blank" rel="noopener" aria-label="Watch Field Notes from Palau on YouTube">
+              <img src="assets/img/palau-field-notes.jpg" alt="Field Notes from Palau: Navigating ocean policy in Palau, video thumbnail" style="height: auto; aspect-ratio: auto; object-fit: contain;">
+            </a>
+            <figcaption>Field Notes from Palau | Navigating Ocean Policy. Now the most-viewed video of all time on the Stanford Woods Institute Youtube channel</figcaption>
+          </figure>
           <figure>
             <a href="https://sophiaesiegel.github.io/shore-check/" target="_blank" rel="noopener" aria-label="Open the Shore Check app">
               <img src="assets/img/shore-check-map.png" alt="Shore Check map of California's coast showing forecast domoic acid levels in the ocean off the state's coastal counties" style="height: auto; aspect-ratio: auto; object-fit: contain;" loading="lazy">
@@ -496,36 +516,9 @@
             <img src="assets/img/ocean-conditions-panels.png" alt="Six global maps of mean ocean conditions, 2015 to 2024: colored dissolved organic matter, chlorophyll-a, sea surface temperature, salinity, turbidity, and log-transformed fishing effort" style="height: auto; aspect-ratio: auto; object-fit: contain;" loading="lazy">
             <figcaption>Satellite-derived ocean conditions. Produced in ArcGIS Pro by Sophia Siegel and Diana Moanga</figcaption>
           </figure>
-        </div>
-      </div>
-
-      <!-- Row 3: Miscellaneous / other adventures -->
-      <div class="row">
-        <div class="col-left">
           <figure>
             <img src="assets/img/showjumping-riyadh-2024-portrait.jpg" alt="Close-up of Sophia in a red Team USA jacket jumping a dark bay horse at the FEI Jumping World Cup Final in Riyadh, 2024" style="height: auto; aspect-ratio: auto; object-fit: contain;" loading="lazy">
             <figcaption>Sophia representing Team USA at the FEI World Cup Finals in Riyadh, 2024.</figcaption>
-          </figure>
-          <figure>
-            <a href="https://kronprinshaakon.hi.no/" target="_blank" rel="noopener" aria-label="Visit the Kronprins Haakon research vessel website">
-              <img src="assets/img/kronprins-haakon.png" alt="The research vessel Kronprins Haakon, with a dark hull and white superstructure, sitting in sea ice" style="height: auto; aspect-ratio: auto; object-fit: contain;" loading="lazy">
-            </a>
-            <figcaption><a href="https://kronprinshaakon.hi.no/" target="_blank" rel="noopener">Kronprins Haakon</a> Polar Research Vessel, where Sophia will live and work from Feb-Mar 2027.</figcaption>
-          </figure>
-        </div>
-        <div class="col-text">
-          <h2>Miscellaneous</h2>
-          <ul>
-            <li>Sophia has represented <a href="https://www.usef.org/media/press-releases/us-equestrian-announces-athletes-for-2024-fei" target="_blank" rel="noopener">Team USA Equestrian</a> on World Cup and Nations Cup teams internationally, consistently ranking among the top showjumping athletes globally from 2021-2024. She retired from horse sport in 2025 to pursue a career in academia.</li>
-            <li>In February Sophia will accompany <a href="https://npolar.no/en/fact/bouveco/" target="_blank" rel="noopener">BOUVECO</a>, a <a href="https://npolar.no/en/programmes/" target="_blank" rel="noopener">Norwegian Polar Institute-led expedition</a> to Bouvetøya, the most remote island in the world! She'll conduct research that features hyperspectral satellite data to discern phytoplankton ecology.</li>
-            <li>Sophia's honors thesis titled, <a href="https://searchworks.stanford.edu/view/vn313hw1709" target="_blank" rel="noopener">Assessing Barriers to California's Coastal Mariculture Economy: A Stakeholder Perspective Analysis</a>, won the Earth Systems Award for Outstanding Research, 2025</li>
-            <li>Sophia is an avid backpacker, traveler and photographer. Her work has received honorable mention in the <a href="https://news.stanford.edu/stories/2026/04/doerr-photo-contest-sustainability-winners" target="_blank" rel="noopener">Doerr School annual photo contest</a>.</li>
-          </ul>
-        </div>
-        <div class="col-right">
-          <figure>
-            <img src="assets/img/showjumping-santa-anita-2025.jpg" alt="Sophia jumping a horse over a Split Rock Jumping Tour fence in the rain at Santa Anita, 2025" style="height: auto; aspect-ratio: auto; object-fit: contain;" loading="lazy">
-            <figcaption>Sophia qualifying for World Cup Finals in Santa Anita, 2025</figcaption>
           </figure>
           <figure>
             <video class="loop-video" src="assets/video/countries-traveled.mp4" autoplay loop muted playsinline preload="auto" aria-label="A slowly spinning globe showing the countries Sophia has traveled to"></video>
