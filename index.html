@@ -1,0 +1,1413 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Sophia Siegel</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Mulish:wght@300;400;700&display=swap">
+<style>
+  /* Layout: Phil-style About page. Centered masthead and tab row, then each section is a
+     three-column row: photos on the left, text in the middle, photos on the right. */
+  :root {
+    --bg: #FFFFFF;
+    --surface: #EFEFEF;
+    --ink: #111111;
+    --muted: #666666;
+    --line: #D6D6D6;
+    --accent: #111111;
+    --title: 'Josefin Sans', 'Helvetica Neue', Arial, sans-serif;
+    --display: 'Mulish', 'Helvetica Neue', Arial, sans-serif;
+    --body: 'Mulish', 'Helvetica Neue', Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0E0E0E;
+      --surface: #1C1C1C;
+      --ink: #F2F2F2;
+      --muted: #9C9C9C;
+      --line: #333333;
+      --accent: #F2F2F2;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0E0E0E;
+    --surface: #1C1C1C;
+    --ink: #F2F2F2;
+    --muted: #9C9C9C;
+    --line: #333333;
+    --accent: #F2F2F2;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.03em;
+    line-height: 1.7;
+    padding-block: 28px 48px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  a { color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .wrap { max-width: 1280px; margin: 0 auto; }
+
+  /* Masthead */
+  header { text-align: center; padding-bottom: 28px; }
+  .name {
+    font-family: var(--title);
+    font-weight: 700;
+    font-size: clamp(1.9rem, 5.5vw, 3.3rem);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .name a { color: inherit; text-decoration: none; }
+  .tagline {
+    font-family: var(--display);
+    font-size: 0.78rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 12px 0 0;
+  }
+  .tagline-sub {
+    font-family: var(--display);
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin: 8px 0 0;
+  }
+  nav {
+    margin-top: 26px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: clamp(18px, 4vw, 52px);
+    row-gap: 2px;
+    padding: 6px 0;
+  }
+  nav a {
+    font-family: var(--display);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 8px 2px;
+    border-bottom: 2px solid transparent;
+  }
+  nav a:hover { color: var(--ink); }
+  nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+
+  /* About: three-column rows */
+  .row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.55fr) minmax(0, 1fr);
+    grid-template-areas: "left text right";
+    gap: clamp(20px, 3.5vw, 52px);
+    align-items: start;
+    padding-top: 44px;
+  }
+  .col-text { grid-area: text; min-width: 0; max-width: 64ch; margin: 0 auto; }
+  .col-left { grid-area: left; }
+  .col-right { grid-area: right; }
+  .col-left, .col-right { display: flex; flex-direction: column; gap: 28px; min-width: 0; }
+
+  h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.55rem;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    margin: 0 0 14px;
+    text-wrap: balance;
+  }
+  .col-text p { margin: 0 0 1em; }
+  .col-text h3 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    margin: 1.6em 0 0.5em;
+  }
+  .col-text ul { margin: 0 0 1em; padding-left: 1.2em; }
+  .col-text li { margin-bottom: 0.55em; padding-left: 0.2em; }
+  .col-text li::marker { color: var(--accent); }
+
+  /* Photos with captions */
+  figure { margin: 0; }
+  .ph, figure img {
+    display: block;
+    width: 100%;
+    aspect-ratio: var(--ar, 4 / 5);
+    object-fit: cover;
+    border: 1px solid var(--line);
+  }
+  .ph {
+    background: var(--surface);
+    position: relative;
+    display: grid;
+    place-items: center;
+  }
+  .ph::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px dashed var(--line);
+  }
+  .ph span {
+    font-family: var(--display);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  figcaption {
+    font-size: 0.84rem;
+    line-height: 1.45;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+
+  /* Selected writings */
+  .writings { max-width: 760px; margin: 0 auto; padding: 24px 0 0; }
+  .writings > h2 { text-align: center; font-size: 1.7rem; margin-bottom: 28px; }
+  .writing { display: grid; grid-template-columns: 200px 1fr; align-items: center; gap: 28px; padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .writing .seal { width: 104px; height: 104px; margin: 0 auto; aspect-ratio: 1 / 1; object-fit: contain; border: 0; }
+  .writing h3 { font-family: var(--display); font-weight: 700; font-size: 1.2rem; line-height: 1.35; letter-spacing: 0.01em; margin: 0 0 8px; }
+  .writing h3 a { color: inherit; text-decoration: none; }
+  .writing h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .writing p { margin: 0; color: var(--muted); }
+  .writing + .writing { border-top: 0; }
+  .writing .cover { width: 200px; }
+  .writing .cover img { display: block; width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; border: 0; }
+  @media (max-width: 560px) { .writing { grid-template-columns: 1fr; text-align: center; gap: 16px; } .writing .cover { width: 100%; } }
+
+  /* Other tabs */
+  .empty {
+    padding: 72px 0 24px;
+    max-width: 52ch;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .empty h2 { font-size: 1.7rem; }
+  .empty p { color: var(--muted); margin: 0; }
+
+  footer {
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    font-family: var(--display);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  /* Looping video in a photo slot */
+  .loop-video { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border: 1px solid var(--line); background: var(--surface); }
+
+  /* The globe video is redrawn on a canvas with its flat gray background removed */
+  /* (kept in layout, just transparent: browsers pause muted autoplay video that is display:none) */
+  .has-canvas { position: relative; }
+  .has-canvas .loop-video { position: absolute; top: 0; left: 0; opacity: 0; pointer-events: none; border: 0; }
+  .loop-canvas { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; }
+
+  /* Video thumbnail link with play mark */
+  .video-link { position: relative; display: block; }
+  .video-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.72);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath d='M24 19v22l19-11z' fill='%23fff'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+  }
+  .video-link:hover .ph, .video-link:hover img { border-color: var(--ink); }
+  .video-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  /* GIS portfolio: filter row, two-by-two project cards */
+  .gis { max-width: 1080px; margin: 0 auto; padding-top: 44px; }
+  .gis-head { text-align: center; max-width: 60ch; margin: 0 auto 34px; }
+  .gis-head h2 { font-size: 1.9rem; margin-bottom: 12px; }
+  .gis-head p { margin: 0; color: var(--muted); }
+  .kicker {
+    font-family: var(--display);
+    font-size: 0.74rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 8px;
+  }
+  .filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .search-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 8px 18px; width: 100%; }
+  .search {
+    width: min(100%, 420px);
+    font: inherit;
+    font-size: 0.95rem;
+    color: var(--ink);
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    padding: 8px 2px;
+  }
+  .search::placeholder { color: var(--muted); }
+  .search:focus-visible, .chip:focus-visible, .card-thumb:focus-visible, .card-cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .result-count { font-family: var(--display); font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .tag-row { display: flex; flex-wrap: wrap; justify-content: center; column-gap: 20px; row-gap: 2px; }
+  .chip {
+    font-family: var(--display);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: none;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    padding: 6px 2px;
+    cursor: pointer;
+  }
+  .chip:hover { color: var(--ink); }
+  .chip[aria-pressed="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+
+  .card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(36px, 5vw, 68px) clamp(24px, 4vw, 56px); }
+  .card { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+  .card-thumb { display: block; border: 1px solid var(--line); background: var(--surface); }
+  .card-thumb:hover { border-color: var(--ink); }
+  .card-thumb img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border: 0; }
+  .card h3 { font-family: var(--display); font-weight: 700; font-size: 1.2rem; line-height: 1.3; margin: 0; text-wrap: balance; }
+  .card h3 a { color: inherit; text-decoration: none; }
+  .card h3 a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .card-desc { margin: 0; font-size: 0.95rem; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+  .card-tags span, .study-skills li {
+    font-family: var(--display);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .card-cta, .study-link {
+    align-self: flex-start;
+    font-family: var(--display);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 2px;
+  }
+  .card-cta:hover, .study-link:hover { color: var(--muted); }
+  .empty-state { text-align: center; color: var(--muted); margin: 40px 0 0; }
+
+  /* Project pages */
+  .project { max-width: 960px; margin: 0 auto; padding-top: 36px; }
+  .back-link, .pager a {
+    font-family: var(--display);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .back-link:hover, .pager a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+  .eyebrow { display: block; font-family: var(--display); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin: 30px 0 10px; }
+  .project h1 { font-family: var(--display); font-weight: 700; font-size: clamp(1.8rem, 4.2vw, 2.7rem); line-height: 1.15; margin: 0 0 18px; text-wrap: balance; }
+  .lede { font-size: 1.12rem; max-width: 62ch; margin: 0 0 26px; }
+  .lede + .study-link { margin-bottom: 28px; }
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 18px 28px;
+    margin: 28px 0 40px;
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .meta div { min-width: 0; }
+  .meta dt { font-family: var(--display); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+  .meta dd { margin: 4px 0 0; font-size: 0.95rem; overflow-wrap: anywhere; }
+  .fig { margin: 0 0 36px; }
+  .fig img, .fig video, .study-media img { display: block; width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; border: 1px solid var(--line); }
+  .fig video { background: var(--surface); }
+  .fig figcaption, .study-media figcaption { font-size: 0.88rem; }
+  .prose { max-width: 66ch; margin: 0 auto; }
+  .prose h2 { font-size: 1.35rem; margin: 1.9em 0 0.6em; }
+  .prose h2:first-child { margin-top: 0; }
+  .prose p, .prose ul, .prose ol { margin: 0 0 1em; }
+  .prose ul, .prose ol { padding-left: 1.3em; }
+  .prose li { margin-bottom: 0.5em; padding-left: 0.2em; }
+  .prose li::marker { color: var(--accent); }
+  .prose strong, .prose b, .fig b, .study-body b { font-weight: 700; }
+  .prose code { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 0.86em; background: var(--surface); padding: 1px 5px; overflow-wrap: anywhere; }
+  .callout { border: 1px solid var(--ink); padding: 18px 22px; margin: 0 0 1em; }
+  .callout p:last-child { margin-bottom: 0; }
+  .table-wrap { overflow-x: auto; margin: 0 0 36px; }
+  .table-wrap h3 { font-family: var(--display); font-weight: 700; font-size: 1.05rem; letter-spacing: 0.02em; margin: 0 0 10px; }
+  table.data { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  table.data th, table.data td { text-align: left; vertical-align: top; padding: 9px 14px 9px 0; border-bottom: 1px solid var(--line); }
+  table.data th { font-family: var(--display); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--ink); }
+  table.data .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  table.data code { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 0.86em; overflow-wrap: anywhere; }
+  .prose h3 { font-family: var(--display); font-weight: 700; font-size: 1.05rem; letter-spacing: 0.02em; margin: 1.6em 0 0.5em; }
+  pre.block { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 0.82rem; line-height: 1.5; background: var(--surface); border: 1px solid var(--line); padding: 14px 16px; overflow-x: auto; margin: 0 0 1em; }
+  .metrics { font-family: var(--display); letter-spacing: 0.02em; }
+  .gallery { max-width: 1180px; margin: 0 auto; padding-top: 24px; }
+  .gallery > h2 { text-align: center; font-size: 1.9rem; margin-bottom: 30px; }
+  .g-row { display: flex; gap: 10px; margin-bottom: 10px; }
+  .g-item { position: relative; margin: 0; min-width: 0; overflow: hidden; background: var(--surface); outline-offset: 3px; }
+  .g-item img { display: block; width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; border: 0; }
+  .g-item figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 36px 16px 14px; font-size: 0.88rem; line-height: 1.4; color: #fff; background: linear-gradient(to top, rgba(0,0,0,0.72), rgba(0,0,0,0)); opacity: 0; transition: opacity 0.2s ease; pointer-events: none; }
+  .g-item:hover figcaption, .g-item:focus-visible figcaption, .g-item:focus-within figcaption { opacity: 1; }
+  @media (hover: none) { .g-item figcaption { opacity: 1; } }
+  @media (max-width: 640px) { .g-row { flex-direction: column; } .g-item { flex: none !important; } }
+  .repro-note { margin: 0 0 8px; padding: 10px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 0.88rem; font-style: italic; color: var(--muted); }
+  .pager { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); }
+  .pager a { color: var(--ink); }
+
+  .study { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: clamp(22px, 4vw, 48px); align-items: start; padding: 40px 0; border-top: 1px solid var(--line); }
+  .study-media { margin: 0; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+  .study-body { min-width: 0; }
+  .study-body h3 { font-family: var(--display); font-weight: 700; font-size: 1.3rem; line-height: 1.25; margin: 0 0 6px; text-wrap: balance; }
+  .study-body .where { font-family: var(--display); font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
+  .study-body p { margin: 0 0 1em; }
+  .study-skills { list-style: none; margin: 0 0 18px; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 16px; }
+  .study-body .study-link { display: inline-block; }
+
+  @media (max-width: 700px) {
+    .card-grid { grid-template-columns: 1fr; }
+    .study { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 900px) {
+    .row {
+      grid-template-columns: 1fr;
+      grid-template-areas: "text" "left" "right";
+      padding-top: 36px;
+    }
+    .col-left, .col-right {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+      gap: 20px;
+    }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    nav a { transition: color 0.15s ease, border-color 0.15s ease; }
+  }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1 class="name"><a href="#about">Sophia Siegel</a></h1>
+    <p class="tagline">Oceans, Blue Foods, Remote Sensing, Machine Learning</p>
+    <p class="tagline-sub">Digital portfolio prepared for the Harvard Griffin GSAS Admissions Committee</p>
+    <nav aria-label="Main">
+      <a href="#about" data-route="about">About</a>
+      <a href="#gis-portfolio" data-route="gis-portfolio">Project Samples</a>
+      <a href="#visual-portfolio" data-route="visual-portfolio">Visual Portfolio</a>
+      <a href="#highlighted-writings" data-route="highlighted-writings">Selected Writings</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ABOUT -->
+    <section id="about" data-view="about">
+      <!-- Row 1: Profile -->
+      <div class="row">
+        <div class="col-left">
+          <figure>
+            <img src="assets/img/sophia-ms-graduation.jpg" alt="Sophia smiling under a stone arcade at Stanford, wearing a white dress and a red graduation stole" style="height: auto; aspect-ratio: auto; object-fit: contain;">
+            <figcaption>Sophia very joyous to complete her MS degree in Stanford, CA. Photo credit: Phil Roberge</figcaption>
+          </figure>
+        </div>
+        <div class="col-text">
+          <h2>Profile</h2>
+          <p>Sophia Siegel is a recent M.S. graduate of the Stanford Doerr School and an aspiring public health changemaker. Through a combination of technical science, communication, and creativity, she hopes to transform human-environmental systems to mutually benefit nature and underrepresented communities.</p>
+          <p>Sophia has relocated to Boston, MA, where she assists research at the Harvard Chan School of Public Health. Her key research interests revolve around food systems, blue foods, remote sensing, AI for Earth, natural capital, and the impacts of climate change on the Global South.</p>
+        </div>
+        <div class="col-right">
+          <figure>
+            <a class="video-link" href="https://www.youtube.com/watch?v=_4dhLL2egZ0" target="_blank" rel="noopener" aria-label="Watch Field Notes from Palau on YouTube">
+              <img src="assets/img/palau-field-notes.jpg" alt="Field Notes from Palau: Navigating ocean policy in Palau, video thumbnail" style="height: auto; aspect-ratio: auto; object-fit: contain;">
+            </a>
+            <figcaption>Field Notes from Palau | Navigating Ocean Policy. Now the most-viewed video of all time on the Stanford Woods Institute Youtube channel</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Row 2: Current research interests -->
+      <div class="row">
+        <div class="col-left">
+          <figure>
+            <img src="assets/img/fishing-intensity-change.png" alt="World map of change in fishing intensity from 2015 to 2024, shown as hexagons from blue (decrease) to dark red (increase), with FAO fishing areas outlined and numbered" style="height: auto; aspect-ratio: auto; object-fit: contain;" loading="lazy">
+            <figcaption>Change in fishing intensity over time. Produced in ArcGIS Pro by Sophia Siegel and Diana Moanga</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/jakarta-bay-aquaculture.png" alt="Classification map of Jakarta Bay in red and navy showing cage and pond aquaculture" style="height: auto; aspect-ratio: auto; object-fit: contain;" loading="lazy">
+            <figcaption>Using deep learning to classify cage and pond aquaculture in Jakarta Bay</figcaption>
+          </figure>
+        </div>
+        <div class="col-text">
+          <h2>Current Research Interests</h2>
+          <p>Sophia's current work uses cutting-edge technology to measure our natural resources, with an emphasis on climate-driven health impacts in coastal regions. She is especially interested in harnessing satellite data to model global fisheries and monitor marine biogeochemical cycles with implications for food safety.</p>
+          <p>She currently collaborates with the Golden Lab's Planetary Health Research Group to distinguish harmful from non-harmful algal blooms and design early warning systems using machine learning.</p>
+          <p>At the heart of Sophia's work is a passion for working with communities to design solutions that serve policy and livelihoods.</p>
+        </div>
+        <div class="col-right">
+          <figure>
+            <a href="https://sophiaesiegel.github.io/shore-check/" target="_blank" rel="noopener" aria-label="Open the Shore Check app">
+              <img src="assets/img/shore-check-map.png" alt="Shore Check map of California's coast showing forecast domoic acid levels in the ocean off the state's coastal counties" style="height: auto; aspect-ratio: auto; object-fit: contain;" loading="lazy">
+            </a>
+            <figcaption><a href="https://sophiaesiegel.github.io/shore-check/" target="_blank" rel="noopener">Shore Check</a> is an application built by Sophia Siegel to predict and visualize harmful algal blooms in CA</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/ocean-conditions-panels.png" alt="Six global maps of mean ocean conditions, 2015 to 2024: colored dissolved organic matter, chlorophyll-a, sea surface temperature, salinity, turbidity, and log-transformed fishing effort" style="height: auto; aspect-ratio: auto; object-fit: contain;" loading="lazy">
+            <figcaption>Satellite-derived ocean conditions. Produced in ArcGIS Pro by Sophia Siegel and Diana Moanga</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Row 3: Miscellaneous / other adventures -->
+      <div class="row">
+        <div class="col-left">
+          <figure>
+            <img src="assets/img/showjumping-riyadh-2024-portrait.jpg" alt="Close-up of Sophia in a red Team USA jacket jumping a dark bay horse at the FEI Jumping World Cup Final in Riyadh, 2024" style="height: auto; aspect-ratio: auto; object-fit: contain;" loading="lazy">
+            <figcaption>Sophia representing Team USA at the FEI World Cup Finals in Riyadh, 2024.</figcaption>
+          </figure>
+          <figure>
+            <a href="https://kronprinshaakon.hi.no/" target="_blank" rel="noopener" aria-label="Visit the Kronprins Haakon research vessel website">
+              <img src="assets/img/kronprins-haakon.png" alt="The research vessel Kronprins Haakon, with a dark hull and white superstructure, sitting in sea ice" style="height: auto; aspect-ratio: auto; object-fit: contain;" loading="lazy">
+            </a>
+            <figcaption><a href="https://kronprinshaakon.hi.no/" target="_blank" rel="noopener">Kronprins Haakon</a> Polar Research Vessel, where Sophia will live and work from Feb-Mar 2027.</figcaption>
+          </figure>
+        </div>
+        <div class="col-text">
+          <h2>Miscellaneous</h2>
+          <ul>
+            <li>Sophia has represented <a href="https://www.usef.org/media/press-releases/us-equestrian-announces-athletes-for-2024-fei" target="_blank" rel="noopener">Team USA Equestrian</a> on World Cup and Nations Cup teams internationally, consistently ranking among the top showjumping athletes globally from 2021-2024. She retired from horse sport in 2025 to pursue a career in academia.</li>
+            <li>In February Sophia will accompany <a href="https://npolar.no/en/fact/bouveco/" target="_blank" rel="noopener">BOUVECO</a>, a <a href="https://npolar.no/en/programmes/" target="_blank" rel="noopener">Norwegian Polar Institute-led expedition</a> to Bouvetøya, the most remote island in the world! She'll conduct research that features hyperspectral satellite data to discern phytoplankton ecology.</li>
+            <li>Sophia's honors thesis titled, <a href="https://searchworks.stanford.edu/view/vn313hw1709" target="_blank" rel="noopener">Assessing Barriers to California's Coastal Mariculture Economy: A Stakeholder Perspective Analysis</a>, won the Earth Systems Award for Outstanding Research, 2025</li>
+            <li>Sophia is an avid backpacker, traveler and photographer. Her work has received honorable mention in the <a href="https://news.stanford.edu/stories/2026/04/doerr-photo-contest-sustainability-winners" target="_blank" rel="noopener">Doerr School annual photo contest</a>.</li>
+          </ul>
+        </div>
+        <div class="col-right">
+          <figure>
+            <img src="assets/img/showjumping-santa-anita-2025.jpg" alt="Sophia jumping a horse over a Split Rock Jumping Tour fence in the rain at Santa Anita, 2025" style="height: auto; aspect-ratio: auto; object-fit: contain;" loading="lazy">
+            <figcaption>Sophia qualifying for World Cup Finals in Santa Anita, 2025</figcaption>
+          </figure>
+          <figure>
+            <video class="loop-video" src="assets/video/countries-traveled.mp4" autoplay loop muted playsinline preload="auto" aria-label="A slowly spinning globe showing the countries Sophia has traveled to"></video>
+            <figcaption>Sophia has traveled to 32 countries (so far)!</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- GIS PORTFOLIO -->
+    <section id="gis-portfolio" data-view="gis-portfolio" hidden>
+      <div class="gis">
+        <div class="gis-head">
+          <p class="kicker">Selected work</p>
+          <h2>Project Samples</h2>
+          <p>Each project below pairs final figures with a short account of the data and the analytical workflow behind it.</p>
+        </div>
+
+        <div class="filters">
+          <div class="search-row">
+            <input class="search" type="search" id="project-search" placeholder="Search projects, methods, or datasets…" aria-label="Search projects">
+            <span class="result-count" id="project-count" aria-live="polite">5 projects</span>
+          </div>
+          <div class="tag-row" role="group" aria-label="Filter projects by theme">
+            <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="chip" data-filter="ocean" aria-pressed="false">Ocean</button>
+            <button type="button" class="chip" data-filter="climate" aria-pressed="false">Climate</button>
+            <button type="button" class="chip" data-filter="hazards" aria-pressed="false">Hazards</button>
+            <button type="button" class="chip" data-filter="suitability" aria-pressed="false">Suitability</button>
+            <button type="button" class="chip" data-filter="remote-sensing" aria-pressed="false">Remote sensing</button>
+          </div>
+        </div>
+
+        <div class="card-grid" id="project-grid">
+
+          <article class="card" data-tags="ocean,remote-sensing">
+            <a class="card-thumb" href="#gis-jakarta-cages" tabindex="-1" aria-hidden="true">
+              <img src="assets/img/jakarta-skysat-scene.jpg" alt="" loading="lazy">
+            </a>
+            <h3><a href="#gis-jakarta-cages">Jakarta Bay Cage Detection</a></h3>
+            <p class="card-desc">Two ways of finding aquaculture cages in half-metre satellite imagery of Jakarta Bay, a Segment Anything model and a trained Random Trees classifier, scored by area overlap. Both find the cages; only one counts them.</p>
+            <div class="card-tags"><span>ArcGIS Pro</span><span>Segment Anything</span><span>Random Trees</span><span>Python</span></div>
+            <a class="card-cta" href="#gis-jakarta-cages">Read the project</a>
+          </article>
+
+          <article class="card" data-tags="ocean,hazards,remote-sensing">
+            <a class="card-thumb" href="https://sophiaesiegel.github.io/shore-check/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="assets/img/shore-check-thumb.png" alt="" loading="lazy">
+            </a>
+            <h3><a href="https://sophiaesiegel.github.io/shore-check/" target="_blank" rel="noopener">Shore Check</a></h3>
+            <p class="card-desc">A live map that puts California's official shellfish advisories next to NOAA C-HARM domoic acid forecasts, backed by a scheduled checker that logs every advisory issued or lifted.</p>
+            <div class="card-tags"><span>JavaScript</span><span>Leaflet</span><span>C-HARM</span><span>GitHub Actions</span></div>
+            <a class="card-cta" href="https://sophiaesiegel.github.io/shore-check/" target="_blank" rel="noopener">Open the live app</a>
+          </article>
+
+          <article class="card" data-tags="ocean,climate,suitability,remote-sensing">
+            <a class="card-thumb" href="#gis-ocean-carbon" tabindex="-1" aria-hidden="true">
+              <img src="assets/img/ocean-cdr-thumb.png" alt="" loading="lazy">
+            </a>
+            <h3><a href="#gis-ocean-carbon">Where Could the Ocean Take Up More Carbon?</a></h3>
+            <p class="card-desc">Two global suitability indices for marine carbon removal — iron fertilization and ocean alkalinity enhancement — mapped on a common scale. Each covers about a fifth of the ocean. They overlap on 3.39% of it.</p>
+            <div class="card-tags"><span>ArcGIS Pro</span><span>Earth Engine</span><span>Copernicus</span><span>Fuzzy overlay</span></div>
+            <a class="card-cta" href="#gis-ocean-carbon">Read the project</a>
+          </article>
+
+          <article class="card" data-tags="remote-sensing,climate,hazards">
+            <a class="card-thumb" href="#gis-earth-engine" tabindex="-1" aria-hidden="true">
+              <img src="assets/img/gee-keys-classification.png" alt="" loading="lazy">
+            </a>
+            <h3><a href="#gis-earth-engine">Earth Engine Method Studies</a></h3>
+            <p class="card-desc">Five short studies in Google Earth Engine — classification and accuracy, thermal archives, cloud as a measurement, change detection two ways, and whether a city is really getting brighter. Scripts on GitHub.</p>
+            <div class="card-tags"><span>Earth Engine</span><span>JavaScript</span><span>Sentinel-2</span><span>Landsat</span></div>
+            <a class="card-cta" href="#gis-earth-engine">Read the project</a>
+          </article>
+
+          <article class="card" data-tags="ocean,climate,remote-sensing">
+            <a class="card-thumb" href="#gis-arctic-ice" tabindex="-1" aria-hidden="true">
+              <img src="assets/img/arctic-sst-thumb.png" alt="" loading="lazy">
+            </a>
+            <h3><a href="#gis-arctic-ice">Arctic Sea Ice Decline with SST</a></h3>
+            <p class="card-desc">A quarter century of September sea ice minima set against mean sea surface temperature, drawn as a dark polar globe with the two records charted beneath it.</p>
+            <div class="card-tags"><span>Earth Engine</span><span>NOAA OISST</span><span>Global scene</span><span>Time series</span></div>
+            <a class="card-cta" href="#gis-arctic-ice">Read the project</a>
+          </article>
+
+        </div>
+
+        <p class="empty-state" id="project-empty" hidden>No projects match that search yet — try clearing the filters.</p>
+      </div>
+    </section>
+
+    <!-- PROJECT: JAKARTA CAGES -->
+    <section id="gis-jakarta-cages" data-view="gis-jakarta-cages" hidden>
+      <div class="project">
+        <p class="repro-note">Project reproduced from earlier work in 2026. Some original materials were lost, so this is a reproduction of the earlier project, rebuilt from the surviving notes and screenshots.</p>
+        <a class="back-link" href="#gis-portfolio">← All projects</a>
+        <span class="eyebrow">Ocean · Aquaculture · Deep learning</span>
+        <h1>Jakarta Bay Cage Detection</h1>
+        <p class="lede">Detecting marine aquaculture cages in half-metre satellite imagery of Jakarta Bay, two ways, with an area-overlap accuracy assessment that scores either.</p>
+        <p class="lede">Written as a reproducible version of a 2026 ArcGIS Pro workflow that originally existed only as a click-path in a notes document.</p>
+        <p><a class="study-link" href="https://github.com/sophiaesiegel/Jakarta-Cage-Detection-Recreate" target="_blank" rel="noopener">View the code on GitHub</a></p>
+
+        <dl class="meta">
+          <div><dt>Role</dt><dd>Analysis, scripting, accuracy assessment</dd></div>
+          <div><dt>Tools</dt><dd>ArcGIS Pro, Segment Anything, Python</dd></div>
+          <div><dt>Imagery</dt><dd>SkySat, 12 July 2025</dd></div>
+          <div><dt>Extent</dt><dd>Jakarta Bay, ~3.8 km²</dd></div>
+        </dl>
+
+        <figure class="fig">
+          <img src="assets/img/jakarta-skysat-scene.jpg" alt="Pan-sharpened SkySat scene of Jakarta Bay with small bright rectangles marking aquaculture cages on orange-green water" loading="lazy">
+          <figcaption><b>Figure 1.</b> Pan-sharpened SkySat imagery of the study area, 12 July 2025. Each small bright rectangle is a cage.</figcaption>
+        </figure>
+
+        <div class="prose">
+          <h2>Why</h2>
+          <p>Indonesia's <em>Makan Bergizi Gratis</em> programme will serve free meals to 82 million people by 2029, and farmed fish is the cheapest dense protein available to fill it. Jakarta is among the last major regions without a school meal programme, and planners need to know what the city already produces before siting cold storage and processing.</p>
+          <p>No current inventory of the cages moored off the coast exists. This pipeline is an attempt to build one from orbit.</p>
+          <p><b>Question:</b> how many aquaculture cages sit off the coast of Jakarta, and can a general-purpose segmentation model find them reliably enough to scale the count across Java?</p>
+          <div class="callout">
+            <p class="kicker">Short answer</p>
+            <p>Both methods find the cages. The trained classifier returns them one raft at a time; SAM returns them in clumps. For a count, that difference decides it.</p>
+          </div>
+
+          <h2>Pipeline</h2>
+<pre class="block">SkySat scene (pan-sharpened)
+         │
+         ├─── detect_sam.py ───────────► SAM_Detections
+         │      Detect Objects Using Deep Learning
+         │      + optional water clip
+         │
+         └─── classify_pixels.py ──────► Classified_Cages
+                train Random Trees (2-class schema)
+                classify raster
+                majority filter × 3  (FOUR / MAJORITY)
+                raster → polygon (no simplify)
+                select cage grid code
+                         │
+                         ▼
+                   accuracy.py
+                reference = digitised cages ∪ AOI bounding box
+                           filtered to trainingdata = 1
+                TP = reference ∩ classified
+                FN = reference − TP
+                FP = classified − TP
+                         │
+                         ▼
+            accuracy_report.json / .csv</pre>
+          <p>Run it from the ArcGIS Pro Python Command Prompt, all at once or one stage at a time. Edit <code>src/config.py</code> first; the paths are placeholders.</p>
+<pre class="block">propy src/run_pipeline.py --step all
+
+propy src/run_pipeline.py --step sam
+propy src/run_pipeline.py --step classify
+propy src/run_pipeline.py --step accuracy</pre>
+        </div>
+
+        <div class="table-wrap" style="margin-top: 36px;">
+          <h3>Data</h3>
+          <table class="data">
+            <tbody>
+              <tr><th scope="row">Sensor</th><td>SkySat, pan-sharpened, via PlanetScope</td></tr>
+              <tr><th scope="row">Scene IDs</th><td><code>20250712_012455_ssc13d3_0006</code>, <code>..._0007</code></td></tr>
+              <tr><th scope="row">Acquired</th><td>12 July 2025</td></tr>
+              <tr><th scope="row">Area of interest</th><td>Jakarta Bay, Tanjung Priok to Ancol (~3.8 km²)</td></tr>
+              <tr><th scope="row">Classifier</th><td>Random Trees, 50 trees, depth 30, 1000 samples/class</td></tr>
+              <tr><th scope="row">Deep learning model</th><td>Segment Anything Model (SAM), Living Atlas <code>.dlpk</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="prose">
+          <p>Imagery is not redistributed with the code. Planet scenes are available under Planet's research licence; the SAM package downloads from Living Atlas.</p>
+
+          <h2>The original workflow</h2>
+          <p>The ArcGIS Pro click-path as recorded in the 2026 project notes, which the scripted version was checked against.</p>
+
+          <h3>Imagery preparation</h3>
+          <p>Two pan-sharpened SkySat scenes from PlanetScope, acquired 12 July 2025. An earlier iteration georeferenced Google Earth screen captures against an imagery basemap using manual control points. That was abandoned in favour of the SkySat scenes, which carry their own geometry.</p>
+
+          <h3>Method A: supervised pixel-based classification</h3>
+          <ol>
+            <li>Digitise a training feature class over cages visible in the area of interest, sampling a broad range of greys so the classifier does not lock onto a single brightness. Train water as well as cages.</li>
+            <li>Classification Wizard → Supervised → Pixel-based → <strong>Random Trees</strong>. Default schema, two classes. 50 trees, maximum depth 30, 1000 samples per class.</li>
+            <li>Merge classes.</li>
+            <li>Majority filter, three passes, <strong>Number of neighbors: Four</strong>, <strong>Replacement threshold: Majority</strong>. Four with majority is the conservative choice: three of four contiguous cells must agree before a value is replaced, which matters when the targets are only a few pixels across.</li>
+            <li>Raster To Polygon with <strong>Simplify off</strong>. The accuracy assessment is computed on polygon area, so vertex smoothing would alter the measurement.</li>
+            <li>Symbolise by grid code, select the cage class by attribute, and export to a new layer.</li>
+            <li>Residual noise inside the cage class was removed by lasso selection. That step is not reproduced in the scripts, because manual editing is not reproducible; the water clip in <code>detect_sam.clip_to_water()</code> addresses the same problem systematically.</li>
+          </ol>
+        </div>
+
+        <figure class="fig" style="margin-top: 36px;">
+          <img src="assets/img/jakarta-training-samples.jpg" alt="ArcGIS Pro Classification Wizard showing red cage training polygons and blue water training points over a grayscale scene, with the Training Samples Manager at right" loading="lazy">
+          <figcaption><b>Figure 2.</b> Training samples in the Classification Wizard: cage polygons (red) and water points (blue) over the scene, with the class list at right. A broad range of greys is sampled for the cage class so the classifier does not lock onto a single brightness.</figcaption>
+        </figure>
+
+        <figure class="fig">
+          <img src="assets/img/jakarta-majority-filter.jpg" alt="Classified raster of Jakarta Bay in red and navy with the Majority Filter geoprocessing pane open" loading="lazy">
+          <figcaption><b>Figure 3.</b> The classified raster with the Majority Filter pane open: input <code>Preview_Classified_RT_50_30_1000__1341</code>, four neighbours, majority threshold. The cages come out red, but so do the quay and shoreline around the bay; masking to water before classifying is listed under Next.</figcaption>
+        </figure>
+
+        <figure class="fig">
+          <img src="assets/img/jakarta-accuracy-assessment.jpg" alt="ArcGIS Pro showing red outcome polygons over Jakarta Bay and a histogram of polygon area for the FalsePOSITIVE_class layer" loading="lazy">
+          <figcaption><b>Figure 4.</b> The accuracy assessment in ArcGIS Pro. The outcome layers (TruePOSITIVE, FalsePOSITIVE, FalseNEGATIVE) are scored as separate tables, and a histogram of polygon area for the FalsePOSITIVE_class layer shows mostly small features with a handful of much larger ones.</figcaption>
+        </figure>
+
+        <div class="prose">
+          <h3>Method B: Segment Anything</h3>
+          <ol>
+            <li>Download the SAM model package from ArcGIS Living Atlas.</li>
+            <li>Analysis → Geoprocessing → Detect Objects Using Deep Learning.</li>
+            <li>Input the raster and point Model Definition at the <code>.dlpk</code>.</li>
+            <li>Set arguments. These were not recorded in the notes, so the scripted version supplies documented defaults, flagged as reconstructed below. The approach follows <a href="https://www.mdpi.com/2072-4292/15/24/5781" target="_blank" rel="noopener">Segment Anything Model (SAM) Assisted Remote Sensing Supervision for Mariculture, Liaoning Province, China</a>.</li>
+          </ol>
+        </div>
+
+        <div class="table-wrap" style="margin-top: 24px;">
+          <h3>SAM arguments</h3>
+          <table class="data">
+            <thead><tr><th>Argument</th><th>What it controls</th><th class="num">Value used</th></tr></thead>
+            <tbody>
+              <tr><td><code>padding</code></td><td>Adds padding around image tiles during inference. Helps prevent edge effects where objects are split across tiles.</td><td class="num">64</td></tr>
+              <tr><td><code>batch_size</code></td><td>Number of image tiles processed in one batch. Affects speed versus memory use.</td><td class="num">4</td></tr>
+              <tr><td><code>box_nms_thresh</code></td><td>Non-maximum suppression threshold to remove overlapping boxes.</td><td class="num">0.70</td></tr>
+              <tr><td><code>points_per_batch</code></td><td>Number of prompt points sampled per batch for segmentation.</td><td class="num">64</td></tr>
+              <tr><td><code>stability_score_thresh</code></td><td>Threshold on the predicted mask stability score.</td><td class="num">0.90</td></tr>
+              <tr><td><code>min_mask_region_area</code></td><td>Minimum area for a detected object to be retained. Helps eliminate tiny artifacts or noise.</td><td class="num">0</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="prose">
+          <h3>Accuracy assessment</h3>
+          <p>The assessment scores area overlap rather than sampling a confusion matrix at points, which suits targets this small and this irregular. The reference covers the whole area of interest, not just the positives: a bounding box for the area of interest is unioned with the training polygons, and a <code>trainingdata</code> field scores 1 for features that came from a digitised cage and 0 for the bounding-box remainder, which is water.</p>
+        </div>
+
+        <div class="table-wrap" style="margin-top: 24px;">
+          <table class="data">
+            <thead><tr><th>Outcome</th><th>Tool</th><th>Inputs</th></tr></thead>
+            <tbody>
+              <tr><td>True positives</td><td>Intersect</td><td>reference cages, classified cages</td></tr>
+              <tr><td>False negatives</td><td>Erase</td><td>reference cages, erase by true positives</td></tr>
+              <tr><td>False positives</td><td>Erase</td><td>classified cages, erase by true positives</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="prose">
+<pre class="block">precision = TP / (TP + FP)
+recall    = TP / (TP + FN)
+F1        = 2 · (precision · recall) / (precision + recall)
+IoU       = TP / (TP + FP + FN)</pre>
+          <p>All on area in square metres, not object counts. The input to the erase must be the <code>trainingdata = 1</code> selection, not the whole union; see the bug described below.</p>
+
+          <h2>Results</h2>
+          <p>From the July 2025 scene, scored on area overlap.</p>
+        </div>
+
+        <div class="table-wrap">
+          <h3>Supervised pixel-based classification (Random Trees)</h3>
+          <table class="data">
+            <thead><tr><th></th><th class="num">Features</th><th class="num">Area (m²)</th><th class="num">Mean (m²)</th></tr></thead>
+            <tbody>
+              <tr><td>True positives</td><td class="num">872</td><td class="num">25,621.12</td><td class="num">29.38</td></tr>
+              <tr><td>False positives</td><td class="num">44</td><td class="num">218.32</td><td class="num">4.96</td></tr>
+              <tr><td>False negatives</td><td class="num">5</td><td class="num">65.07</td><td class="num">13.01</td></tr>
+            </tbody>
+          </table>
+          <p class="metrics" style="margin: 12px 0 0;"><strong>Precision 99.2%</strong> · Recall 99.7% · F1 99.5% · IoU 98.9%</p>
+        </div>
+
+        <div class="table-wrap">
+          <h3>Segment Anything</h3>
+          <table class="data">
+            <thead><tr><th></th><th class="num">Features</th><th class="num">Area (m²)</th><th class="num">Mean (m²)</th></tr></thead>
+            <tbody>
+              <tr><td>True positives</td><td class="num">166</td><td class="num">935,731.69</td><td class="num">5,636.94</td></tr>
+              <tr><td>False positives</td><td class="num">15</td><td class="num">15,156.17</td><td class="num">1,010.41</td></tr>
+              <tr><td>False negatives</td><td class="num">59</td><td class="num">8,304.83</td><td class="num">140.76</td></tr>
+            </tbody>
+          </table>
+          <p class="metrics" style="margin: 12px 0 0;"><strong>Precision 98.4%</strong> · Recall 99.1% · F1 98.8% · IoU 97.6%</p>
+        </div>
+
+        <div class="prose">
+          <h2>The finding that matters</h2>
+          <div class="callout">
+            <p class="kicker">Finding</p>
+            <p>Both methods find the cages. They disagree about what a cage <em>is</em>.</p>
+            <p>SAM's mean footprint is 5,637 m² against the pixel classifier's 29 m², roughly 200× larger, with its biggest single polygon at 110,928 m². It is segmenting cage <strong>clusters</strong> as single objects rather than resolving individual rafts.</p>
+          </div>
+          <p>For a map of where aquaculture happens, that is fine, and SAM gets there with no training data at all. For a count of cages, which is what the procurement question needs, it is the wrong unit, and no threshold change fixes it. The trained classifier wins on that question not because Random Trees beats a foundation model but because it was trained on this scene, at this resolution, for this target.</p>
+
+          <h2>A bug worth documenting</h2>
+          <p>SAM's false-negative layer, as originally exported, held 60 features summing to 2,844,274 m². One polygon accounted for 2,835,969 m² of that: <strong>99.7% of the layer</strong>.</p>
+          <p>That polygon is the area-of-interest water body. It reached the false negatives because the erase ran against the whole reference union rather than the <code>trainingdata = 1</code> selection. Water correctly left as water is a true negative; it cannot be a false negative.</p>
+          <p>Scored as exported, SAM's recall is 24.8% and its F1 is 39.6%. With the water polygon removed, recall is 99.1% and F1 is 98.8%. One mis-specified erase, and the conclusion inverts.</p>
+          <p>Precision is identical either way, at 98.4%, because precision never touches the false-negative layer, which is why the error survived until recall was computed.</p>
+          <p><code>metrics.check_dominant_feature()</code> now runs against all three outcome layers and flags any layer where one polygon holds more than half the area. It catches this and the earlier true-positive variant of the same mistake. Both are pinned in <code>tests/test_metrics.py</code>.</p>
+
+          <h2>On true negatives</h2>
+          <p>They are recoverable here, and they should still not be reported.</p>
+          <p>The mislabelled polygon <em>is</em> essentially the true negative area, so TN = 2,835,969 − 15,156 = <strong>2,820,813 m²</strong>, implying an area of interest of about 3.78 km². From there, overall accuracy is 99.4% and specificity 99.5%.</p>
+          <p>Both numbers are dominated by empty sea. Classifying the entire area as water, finding zero cages, scores <strong>74.6%</strong> overall accuracy, because that is simply the water fraction of the bounding box. Extend the box a kilometre further offshore and TN grows, overall accuracy climbs toward 100%, and nothing about the classifier has changed.</p>
+          <p>TN is a property of where the analyst drew the box. Precision, recall, F1 and IoU all exclude it for that reason, and IoU is the standard segmentation metric precisely because it does.</p>
+          <p>The exception, for completeness: if the area of interest were a defined management unit, such as a licensed aquaculture zone or a concession boundary, specificity would carry real meaning as false alarms per unit area of somewhere people care about. A bounding box around one's own training polygons is not that.</p>
+
+          <h2>What these numbers do not prove</h2>
+          <p>Stated plainly, because the figures look better than they are.</p>
+          <ul>
+            <li><strong>The validation set is not held out.</strong> The reference polygons are the same polygons the classifier trained on. Scores near 99% largely measure how faithfully the output reproduces its own training geometry, not how the method generalises to unseen coast. A real accuracy assessment needs independently digitised validation polygons, ideally from a second interpreter. <code>accuracy.py --reference</code> takes one.</li>
+            <li><strong>Area is not count.</strong> Every metric here is computed on square metres of overlap. Neither method was scored on whether it found the right <em>number</em> of cages.</li>
+            <li><strong>One scene, one day.</strong> A single July 2025 acquisition over one bay. Nothing here speaks to seasonality, to cages moved between acquisitions, or to the rest of Java.</li>
+            <li><strong>A third run exists and is excluded.</strong> An earlier scoring pass returned 716 true-positive polygons totalling 3,272,405 m², one of which was 2,636,305 m² on its own: the same water-polygon mistake, in the true-positive layer instead. Its 99.9% precision is an artifact. It survives in <code>tests/test_metrics.py</code> rather than being deleted.</li>
+          </ul>
+
+          <h2>Parameter provenance</h2>
+          <p>Not every parameter survived in the project notes. Each is tagged in <code>src/config.py</code>.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data">
+            <thead><tr><th>Parameter</th><th>Status</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td>Two-class schema (water, cages)</td><td>documented</td><td>—</td></tr>
+              <tr><td>Classifier</td><td>documented</td><td>Random Trees</td></tr>
+              <tr><td>Trees / depth / samples per class</td><td>documented</td><td>50 / 30 / 1000</td></tr>
+              <tr><td>Majority filter passes</td><td>documented</td><td>3</td></tr>
+              <tr><td>Majority filter neighbours</td><td>documented</td><td><code>FOUR</code></td></tr>
+              <tr><td>Majority filter threshold</td><td>documented</td><td><code>MAJORITY</code></td></tr>
+              <tr><td>Polygon simplification</td><td>documented</td><td>off</td></tr>
+              <tr><td>Overlay sequence (intersect/erase)</td><td>documented</td><td>—</td></tr>
+              <tr><td>Reference built by bounding-box union</td><td>documented</td><td>—</td></tr>
+              <tr><td>SAM <code>padding</code></td><td><strong>reconstructed</strong></td><td>64</td></tr>
+              <tr><td>SAM <code>batch_size</code></td><td><strong>reconstructed</strong></td><td>4</td></tr>
+              <tr><td>SAM <code>stability_score_thresh</code></td><td><strong>reconstructed</strong></td><td>0.90</td></tr>
+              <tr><td>SAM <code>box_nms_thresh</code></td><td><strong>reconstructed</strong></td><td>0.70</td></tr>
+              <tr><td>SAM <code>points_per_batch</code></td><td><strong>reconstructed</strong></td><td>64</td></tr>
+              <tr><td>SAM <code>min_mask_region_area</code></td><td><strong>reconstructed</strong></td><td>0</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="prose">
+          <p>The classifier and its three hyperparameters come from a Classification Wizard preview layer named <code>Preview_Classified_RT_50_30_1000__1341</code>, captured in a Majority Filter geoprocessing pane in the project notes (Figure 3). <code>RT</code> is Random Trees; the numbers are the tool's first three numeric parameters in order. The trailing 1000 matches Esri's documented default for <code>max_samples_per_class</code>, which corroborates the reading. The majority filter settings come from the same pane.</p>
+          <p>Reconstructed values are Esri-documented defaults or reasonable choices, supplied so the pipeline runs end to end. The published figures above came from the original 2026 run, <strong>not</strong> from these values. Re-running SAM with them will produce different numbers.</p>
+          <p>A note on SAM's arguments: it takes a different set from the generic object-detection architectures: <code>stability_score_thresh</code> and <code>box_nms_thresh</code>, not the <code>threshold</code> and <code>nms_overlap</code> documented for SSD, RetinaNet and Faster R-CNN. Passing the generic names is ignored rather than raising, which is an easy way to think you have tuned something you have not.</p>
+
+          <h2>Requirements</h2>
+          <ul>
+            <li>ArcGIS Pro 3.x with the <strong>Image Analyst</strong> and <strong>Spatial Analyst</strong> extensions</li>
+            <li>The Erase tool requires an Advanced licence</li>
+            <li>A CUDA GPU for SAM. On CPU, inference over a full SkySat scene is slow enough to be impractical</li>
+            <li>Python 3.9+ (ships with Pro). No third-party dependencies beyond <code>arcpy</code>; <code>pytest</code> only for the tests</li>
+          </ul>
+<pre class="block">python -m pytest tests/ -v    # 24 tests, no ArcGIS needed</pre>
+
+          <h2>Layout</h2>
+<pre class="block">src/
+  config.py          all parameters, each tagged with provenance
+  arc_env.py         extension checkout, workspace setup, logging
+  detect_sam.py      Segment Anything detection + water clip
+  classify_pixels.py train → classify → filter → vectorise
+  accuracy.py        overlay operations and reporting
+  metrics.py         the arithmetic, arcpy-free and testable
+  run_pipeline.py    CLI driver
+tests/
+  test_metrics.py    regression tests against the measured 2026 totals
+docs/
+  methods.md         the original click-path, for comparison</pre>
+          <p><code>metrics.py</code> is deliberately separate from <code>accuracy.py</code> so the arithmetic can be tested without a licence. The geometry needs ArcGIS; the division does not.</p>
+
+          <h2>Next</h2>
+          <ul>
+            <li>Digitise an independent validation set over held-out coast and rescore both methods</li>
+            <li>Score on object count with centroid matching, not area overlap</li>
+            <li>Mask to water before classifying, which removes the dominant false-positive source at no analytical cost</li>
+            <li>Split SAM's merged cluster polygons, or accept it as an extent mapper</li>
+            <li>Extend to the 2020 archive for the change-detection question the original proposal set aside</li>
+          </ul>
+
+          <h2>Licence</h2>
+          <p>MIT. Imagery © Planet Labs PBC, not covered by this licence.</p>
+          <p>Sophia E. Siegel · Stanford Doerr School of Sustainability</p>
+        </div>
+
+        <div class="pager">
+          <a href="#gis-portfolio">All projects</a>
+          <a href="#gis-ocean-carbon">Next: Where Could the Ocean Take Up More Carbon? →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT: OCEAN CARBON -->
+    <section id="gis-ocean-carbon" data-view="gis-ocean-carbon" hidden>
+      <div class="project">
+        <a class="back-link" href="#gis-portfolio">← All projects</a>
+        <span class="eyebrow">Ocean · Carbon removal</span>
+        <h1>Where Could the Ocean Take Up More Carbon?</h1>
+        <p class="lede">Ocean alkalinity enhancement and iron fertilization are both place-dependent, and they depend on different places. Mapping each globally on the same 0–1 scale shows how little ocean satisfies both — and why the choice is where, not which.</p>
+
+        <dl class="meta">
+          <div><dt>Role</dt><dd>Analysis, modeling, cartography</dd></div>
+          <div><dt>Tools</dt><dd>ArcGIS Pro, Google Earth Engine</dd></div>
+          <div><dt>Extent</dt><dd>Global, single-year snapshot</dd></div>
+          <div><dt>Status</dt><dd>In progress</dd></div>
+        </dl>
+
+        <figure class="fig">
+          <img src="assets/img/ocean-cdr-comparison.png" alt="Global map comparing HNLC-suitable, physically suitable, and jointly suitable ocean areas" loading="lazy">
+          <figcaption><b>Figure 1.</b> The two indices thresholded and overlaid. HNLC-suitable covers 21.38% of the ocean and physically suitable 20.58% — but only <b>3.39%</b> qualifies for both.</figcaption>
+        </figure>
+
+        <div class="prose">
+          <h2>The question</h2>
+          <p>Marine carbon removal is usually argued in the abstract — whether a method works, not where. <b>Ocean alkalinity enhancement</b> adds alkaline material to surface seawater so the ocean draws down more CO<sub>2</sub>; whether it works at a site is a question of <em>physics</em>, namely how long that alkalinity stays in contact with the atmosphere. <b>Iron fertilization</b> is a question of <em>biogeochemistry</em>: it does something only where surplus nutrients sit unused for want of iron.</p>
+
+          <h2>The headline result</h2>
+          <div class="callout">
+            <p class="kicker">Finding</p>
+            <p>Each index, thresholded, covers roughly a fifth of the world ocean — <strong>21.38%</strong> HNLC-suitable, <strong>20.58%</strong> physically suitable for alkalinity enhancement. Independence would predict about 4.4% overlap. They overlap on <strong>3.39%</strong>.</p>
+            <p>The two are close to spatially disjoint and mildly anti-correlated. The cold, high-nitrate, deep-mixed Southern Ocean that suits iron is largely the water whose deep mixed layers and fast currents make it poor for alkalinity. These are options for different oceans.</p>
+          </div>
+
+          <h2>Index 1 — Ocean alkalinity enhancement</h2>
+          <p>The controlling variable is circulation, not chemistry. Alkalinity only draws down carbon while it stays in the surface layer; diluted or subducted, the uptake never happens. <a href="https://doi.org/10.1038/s43247-025-02480-1" target="_blank" rel="noopener">Guo et al. (2025)</a>, from Heather Kim's group at WHOI, make this explicit — releasing passive dye tracers in a circulation model and scoring sites on spread, retention, gas transfer, and residence time.</p>
+          <p>That cannot run globally without a global circulation model, so this index uses static proxies for the same physics: <strong>mixed layer depth</strong> (shallow better), <strong>wind speed</strong> (higher drives gas transfer), <strong>surface current speed</strong> (slower better), <strong>bathymetry</strong> (shelves over abyss), and <strong>distance to shipping</strong>. Layers from GEBCO, the Copernicus physical reanalysis, ERA5 winds, and global maritime traffic.</p>
+        </div>
+
+        <figure class="fig" style="margin-top: 36px;">
+          <img src="assets/img/ocean-cdr-physical.png" alt="Global physical suitability index for ocean alkalinity enhancement" loading="lazy">
+          <figcaption><b>Figure 2.</b> Physical suitability for alkalinity enhancement. Shelves and mid-latitude margins score highest; the deep-mixed Southern Ocean scores poorly despite being the flagship region for iron.</figcaption>
+        </figure>
+
+        <div class="prose">
+          <h2>Index 2 — Iron fertilization in HNLC waters</h2>
+          <p>Roughly a third of the ocean is <strong>high-nutrient, low-chlorophyll</strong>: nitrate sits unused because iron limits growth. Twelve mesoscale enrichment experiments synthesised by <a href="https://doi.org/10.1126/science.1131669" target="_blank" rel="noopener">Boyd et al. (2007)</a> showed unambiguously that adding iron triggers a bloom there, following <a href="https://doi.org/10.1038/331341a0" target="_blank" rel="noopener">Martin &amp; Fitzwater (1988)</a>; <a href="https://doi.org/10.1038/ngeo1765" target="_blank" rel="noopener">Moore et al. (2013)</a> map where each kind of nutrient limitation falls.</p>
+          <p>What those experiments did <em>not</em> establish is durable storage — most bloom carbon was remineralised near the surface rather than exported. This index marks where the biological precondition holds, not where sequestration would succeed. It combines high surface nitrate, low chlorophyll, and low dissolved iron, all from the Copernicus biogeochemistry reanalysis (<code>GLOBAL_MULTIYEAR_BGC_001_029</code>).</p>
+        </div>
+
+        <figure class="fig" style="margin-top: 36px;">
+          <img src="assets/img/ocean-cdr-layout.png" alt="Global HNLC iron fertilization suitability index" loading="lazy">
+          <figcaption><b>Figure 3.</b> Iron fertilization suitability. The Southern Ocean, equatorial Pacific and subarctic North Pacific carry the signal — the same regions where the enrichment experiments were run.</figcaption>
+        </figure>
+
+        <div class="prose">
+          <h2>Method</h2>
+          <p>Each input is rescaled to a 0–1 membership surface with <strong>Fuzzy Membership</strong> — linear where more is better, inverted where less is, Gaussian for bathymetry where the optimum sits in the middle — then combined with <strong>Fuzzy Overlay</strong>. Building graded surfaces rather than threshold masks keeps visible how close each cell came to the cutoff; a binary map can still be produced afterwards, but the threshold stays an explicit choice.</p>
+          <p>Both indices are annual means for a single year, so seasonality is averaged out — a real limitation given that the Kim result is strongly seasonal. The HNLC index has a built-in sanity check: the Southern Ocean, equatorial Pacific, and subarctic North Pacific should light up while the subtropical gyres stay dark.</p>
+          <p>These are physical and biogeochemical surfaces only. Ecological consequence, governance, and monitoring are outside the frame, and all would narrow the bright areas considerably.</p>
+        </div>
+
+        <div class="pager">
+          <a href="#gis-portfolio">All projects</a>
+          <a href="#gis-earth-engine">Next: Earth Engine Method Studies →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT: ARCTIC ICE -->
+    <section id="gis-arctic-ice" data-view="gis-arctic-ice" hidden>
+      <div class="project">
+        <a class="back-link" href="#gis-portfolio">← All projects</a>
+        <span class="eyebrow">Ocean · Climate</span>
+        <h1>Arctic Sea Ice Decline with SST</h1>
+        <p class="lede">Sea surface temperature and Arctic sea ice extent, drawn together — a polar global scene with the two records running as time series beneath it.</p>
+
+        <dl class="meta">
+          <div><dt>Role</dt><dd>Analysis, cartography</dd></div>
+          <div><dt>Tools</dt><dd>Google Earth Engine, ArcGIS Pro</dd></div>
+          <div><dt>Extent</dt><dd>Arctic, EPSG:3413</dd></div>
+          <div><dt>Period</dt><dd>2001–2025</dd></div>
+        </dl>
+
+        <figure class="fig">
+          <img src="assets/img/arctic-sst-layout.png" alt="Dark polar globe showing September 2000 Arctic sea ice extent over sea surface temperature, with a chart of minimum ice extent and mean SST from 2001 to 2025" loading="lazy">
+          <figcaption><b>Figure 1.</b> A polar global scene showing September 2000 ice extent over sea surface temperature, with minimum ice extent (bars) and mean SST (line) charted from 2001 to 2025.</figcaption>
+        </figure>
+
+        <figure class="fig">
+          <video src="assets/video/ice-retreat.mp4" controls muted loop playsinline preload="metadata" poster="assets/img/arctic-sst-thumb.png">Your browser does not support embedded video.</video>
+          <figcaption><b>Figure 2.</b> Sea ice retreat animated across the record.</figcaption>
+        </figure>
+
+        <div class="prose">
+          <h2>The question</h2>
+          <p>Arctic sea ice loss is usually shown alone — a line going down. This puts the ice and the ocean underneath it in one frame, over the same period and the same projection.</p>
+
+          <h2>Data</h2>
+          <ul>
+            <li><strong>Sea surface temperature</strong> — NOAA OISST v2.1 (<code>NOAA/CDR/OISST/V2_1</code>) via Earth Engine, reduced to annual means and reprojected to EPSG:3413.</li>
+            <li><strong>Sea ice extent</strong> — monthly polygon feature class carrying year, month, area, and extent.</li>
+          </ul>
+
+          <h2>Method</h2>
+          <ol>
+            <li>Compute annual mean SST in Earth Engine; export as a multiband GeoTIFF, one band per year.</li>
+            <li>Build a polar Global Scene in ArcGIS Pro, so the Arctic reads as a cap on a sphere rather than a distorted rectangle.</li>
+            <li>Summarise ice to <strong>annual minimum</strong> extent — the September low is what tracks long-term loss, while an annual mean blends the winter maximum back in and damps the signal. Years without full monthly coverage are dropped, since an incomplete year returns a spuriously low minimum.</li>
+            <li>Chart both series beneath the scene on independent left and right axes.</li>
+          </ol>
+
+          <h2>What it shows</h2>
+          <p>From 2001 to 2025 minimum extent falls from roughly 6.8 to about 4.5 million km², with the 2012 collapse as the deepest trough. Mean SST rises a few tenths of a degree over the same window.</p>
+          <p>The two are not presented as a causal pair. Half a degree of averaged warming does not mechanically produce millions of km² of ice loss — that link runs through albedo feedback and ocean heat transport, neither of which appears here. The defensible claim is that the two records move together.</p>
+        </div>
+
+        <div class="pager">
+          <a href="#gis-earth-engine">← Earth Engine Method Studies</a>
+          <a href="#gis-portfolio">All projects →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT: EARTH ENGINE METHOD STUDIES -->
+    <section id="gis-earth-engine" data-view="gis-earth-engine" hidden>
+      <div class="project">
+        <a class="back-link" href="#gis-portfolio">← All projects</a>
+        <span class="eyebrow">Google Earth Engine</span>
+        <h1>Earth Engine Method Studies</h1>
+        <p class="lede">Five short studies, each pointed at a different remote sensing problem — classifying a coastline, reading a thermal archive, treating cloud as a measurement rather than a nuisance, detecting change two ways, and asking whether a city is really getting brighter.</p>
+        <a class="study-link" href="https://github.com/sophiaesiegel/GEE-Method-Studies" target="_blank" rel="noopener">All scripts on GitHub</a>
+
+        <dl class="meta">
+          <div><dt>Platform</dt><dd>Google Earth Engine (JavaScript)</dd></div>
+          <div><dt>Sensors</dt><dd>Sentinel-2, Landsat 5/8, MODIS, VIIRS</dd></div>
+          <div><dt>Context</dt><dd>EARTHSYS 242, Remote Sensing of Land</dd></div>
+          <div><dt>Code</dt><dd><a href="https://github.com/sophiaesiegel/GEE-Method-Studies" target="_blank" rel="noopener">GEE-Method-Studies</a></dd></div>
+        </dl>
+
+        <div class="prose" style="margin-bottom: 24px;">
+          <p>These come out of coursework, but each one is a study area I picked and a question I framed. What ties them together is less the subject matter than a habit: the interesting part of a remote sensing result is usually the thing that could make it wrong — a display stretch inherited from a different sensor, a validation set too small to support its own decimal places, a city that swapped out every streetlight in the middle of the study period.</p>
+        </div>
+
+        <!-- Study 1 -->
+        <div class="study">
+          <figure class="study-media">
+            <img src="assets/img/gee-keys-classification.png" alt="Random Forest land cover classification of south Florida showing developed, herbaceous, water and land classes with training points overlaid" loading="lazy">
+            <figcaption>Random Forest output with the hand-drawn training points overlaid. Development follows the road grid, herbaceous cover holds the coastal fringe, agriculture fills the interior.</figcaption>
+          </figure>
+          <div class="study-body">
+            <h3>Classifying a coastline, and checking whether it worked</h3>
+            <p class="where">Florida Keys &amp; Everglades · Sentinel-2</p>
+            <p>A five-year Sentinel-2 median composite over south Florida, classified into developed, herbaceous, water, and land. Cloud is handled in two tiers — a scene-level filter, then a per-pixel cloud-probability mask — because neither alone is enough over a subtropical marine area.</p>
+            <p>The scene is classified twice: <b>k-means with seven clusters</b> and <b>Random Forest with four trained classes</b>. Asking for more clusters than the scheme has is deliberate — the extras split water by depth, real structure the four-class scheme discards.</p>
+            <p>Validation gave <b>95.8% accuracy, kappa 0.94</b>. The useful part is underneath: water and developed classified perfectly, and the only error was land read as herbaceous — the class with 12 training points against water's 52. Difficulty tracked sample size. The headline figure rests on 24 validation samples drawn from the same polygons as the training data, so it is an upper bound.</p>
+            <ul class="study-skills"><li>Supervised classification</li><li>k-means</li><li>Random Forest</li><li>Confusion matrix</li><li>Cloud masking</li><li>Compositing</li></ul>
+            <a class="study-link" href="https://github.com/sophiaesiegel/GEE-Method-Studies/blob/main/scripts/florida-keys-classification.js" target="_blank" rel="noopener">View the script</a>
+          </div>
+        </div>
+
+        <!-- Study 2 -->
+        <div class="study">
+          <figure class="study-media">
+            <img src="assets/img/gee-spain-lst.png" alt="MODIS land surface temperature over Spain after adjusting the display stretch, showing cold interior plateau and warm Guadalquivir valley" loading="lazy">
+            <img src="assets/img/gee-spain-buffer.png" alt="Spain with a 100 km offshore buffer intersected with an offshore region of interest" loading="lazy">
+            <figcaption>Top: land surface temperature once the stretch matches the data — the cold Meseta and Pyrenees separate cleanly from the warm Guadalquivir valley. Bottom: a 100 km maritime buffer intersected with an offshore area of interest.</figcaption>
+          </figure>
+          <div class="study-body">
+            <h3>Reading a thermal archive without misreading it</h3>
+            <p class="where">Spain · MODIS LST + Pathfinder SST</p>
+            <p>MODIS land surface temperature paired with sea surface temperature offshore, November 2022. Both are stored as <b>scaled integers</b> rather than physical values, which is where this kind of analysis usually goes wrong.</p>
+            <p>The first display range, 13000–16500 raw, works out to <b>−13 °C to +57 °C</b> — seventy degrees for Iberia in November, so the map rendered as one flat colour. Reading the histogram first gave 13800–15500, or <b>3 °C to 37 °C</b>. Same image, same palette; only the stretch changed.</p>
+            <p>The second half buffers the coastline 100 km offshore and intersects it with an area of interest to build and measure a coastal zone — structurally the same operation as delineating a jurisdictional band for marine spatial planning.</p>
+            <ul class="study-skills"><li>Scaled-integer data</li><li>Histogram-driven stretch</li><li>Temporal reducers</li><li>Buffers &amp; intersection</li><li>Zonal area</li></ul>
+            <a class="study-link" href="https://github.com/sophiaesiegel/GEE-Method-Studies/blob/main/scripts/spain-lst-sst.js" target="_blank" rel="noopener">View the script</a>
+          </div>
+        </div>
+
+        <!-- Study 3 -->
+        <div class="study">
+          <figure class="study-media">
+            <img src="assets/img/gee-cloud-ndvi-diff.png" alt="Difference between cloud-filtered and unfiltered mean NDVI over Anchorage, broadly negative" loading="lazy">
+            <figcaption>Cloud-filtered minus unfiltered mean NDVI over Anchorage. The rectangular seams are Landsat scene footprints — a reminder that each pixel rests on a different number of contributing images.</figcaption>
+          </figure>
+          <div class="study-body">
+            <h3>Cloud as the measurement</h3>
+            <p class="where">Anchorage, Phoenix, Los Angeles · Landsat 8</p>
+            <p>Every other study here treats cloud as contamination. This one makes a per-image cloud likelihood score the variable, aggregated into an annual time series for three cities.</p>
+            <p>The result says more about the metric than the cities. The algorithm keys on brightness, coolness, and a snow index, so it <b>cannot separate cloud from snow</b> — Anchorage carries snow much of the year and scores high partly for that reason, flattering the hypothesis it was meant to test.</p>
+            <p>The second half differences cloud-filtered against unfiltered mean NDVI. It runs broadly negative, the opposite of the naive expectation, and the likely cause is <b>sampling bias</b>: in a maritime subarctic climate the clear days are disproportionately cold and snow-covered, so filtering for low cloud quietly filters for winter.</p>
+            <ul class="study-skills"><li>simpleCloudScore</li><li>Time series aggregation</li><li>Image properties</li><li>Sampling bias</li><li>NDVI</li></ul>
+            <a class="study-link" href="https://github.com/sophiaesiegel/GEE-Method-Studies/blob/main/scripts/cloud-climatology.js" target="_blank" rel="noopener">View the script</a>
+          </div>
+        </div>
+
+        <!-- Study 4 -->
+        <div class="study">
+          <figure class="study-media">
+            <img src="assets/img/gee-florida-developed-gain.png" alt="NLCD developed classes in red with newly developed areas in cyan across Miami-Dade" loading="lazy">
+            <img src="assets/img/gee-florida-ndvi-change.png" alt="NDVI change 2001 to 2019 with vegetation loss in red along the coastal margin" loading="lazy">
+            <figcaption>Two ways of seeing the same two decades. Top: existing development in red, newly developed land in cyan, expanding along the western fringe. Bottom: continuous NDVI change, with loss concentrated on the coastal margin.</figcaption>
+          </figure>
+          <div class="study-body">
+            <h3>Two ways to detect change</h3>
+            <p class="where">South Miami-Dade &amp; the Lower Keys · NLCD, Landsat 5 &amp; 8</p>
+            <p>The same eighteen years read <b>categorically</b> and <b>continuously</b>. The first groups NLCD classes and finds gain and loss by boolean comparison; the second differences NDVI between 2001 Landsat 5 and 2019 Landsat 8, catching gradual thinning that never crosses a class boundary.</p>
+            <p>The first run showed a great deal of apparent development <em>loss</em>, implausible in Miami. The cause was the class grouping — using deciduous forest alone made an evergreen stand register as forest loss. <b>The error was in the categories, not the data.</b></p>
+            <p>The NDVI half carries its own flaw: the quality mask uses Collection 1 bit positions against Collection 2 data, so it lets <b>cloud shadow</b> through, and shadow depresses NDVI in a way that reads as vegetation loss.</p>
+            <ul class="study-skills"><li>Change detection</li><li>Class remapping</li><li>Boolean masking</li><li>QA bitmasks</li><li>Multi-sensor NDVI</li></ul>
+            <a class="study-link" href="https://github.com/sophiaesiegel/GEE-Method-Studies/blob/main/scripts/south-florida-lulc-change.js" target="_blank" rel="noopener">View the script</a>
+          </div>
+        </div>
+
+        <!-- Study 5 -->
+        <div class="study">
+          <figure class="study-media">
+            <img src="assets/img/gee-lights-change.png" alt="Nighttime lights change map with increase in purple and decrease in pink, decrease concentrated over the urban grid" loading="lazy">
+            <img src="assets/img/gee-lights-2016.png" alt="VIIRS nighttime lights over Santa Clara County in 2016" loading="lazy">
+            <img src="assets/img/gee-lights-2023.png" alt="VIIRS nighttime lights over Santa Clara County in 2023" loading="lazy">
+            <figcaption>Top: where the signal rose (purple) and fell (pink). The dimming traces the urban street grid; the brightening fills the dark hills. Below: the 2016 and 2023 composites it came from.</figcaption>
+          </figure>
+          <div class="study-body">
+            <h3>Is the city actually getting brighter?</h3>
+            <p class="where">Santa Clara County, CA · VIIRS 2016 vs 2023</p>
+            <p>Annual VIIRS composites for the South Bay differenced across seven years, split into gain and loss by area. The arithmetic says <b>83.3% of the area brightened and 16.7% dimmed</b>.</p>
+            <p><b>San José replaced every streetlight in the city with LED, finishing in early 2023</b> — inside this window. The VIIRS Day/Night Band is comparatively insensitive to blue-rich LED output, while the sodium lamps they replaced emitted strongly where the sensor is most responsive, so a converted street reads dimmer even when lit as brightly. Note where the pink sits: it follows the street grid.</p>
+            <p>The percentage is also a <b>sign test with no magnitude threshold</b> — a dark hillside pixel drifting from 0.04 to 0.05 nW counts the same as downtown moving from 60 to 70. The defensible reading is that lit area expanded while the lit core dimmed for reasons partly about lamps rather than activity.</p>
+            <ul class="study-skills"><li>VIIRS DNB</li><li>Image differencing</li><li>Water masking</li><li>Area accounting</li><li>Sensor confounds</li></ul>
+            <a class="study-link" href="https://github.com/sophiaesiegel/GEE-Method-Studies/blob/main/scripts/south-bay-nighttime-lights.js" target="_blank" rel="noopener">View the script</a>
+          </div>
+        </div>
+
+        <div class="pager">
+          <a href="#gis-ocean-carbon">← Where Could the Ocean Take Up More Carbon?</a>
+          <a href="#gis-arctic-ice">Next: Arctic Sea Ice Decline with SST →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISUAL PORTFOLIO -->
+    <section id="visual-portfolio" data-view="visual-portfolio" hidden>
+      <div class="gallery">
+        <h2>Visual Portfolio</h2>
+
+        <div class="g-row">
+          <figure class="g-item" tabindex="0" style="flex: 1.648 1 0;">
+            <img src="assets/img/vp-shrine.jpg" alt="A small white shrine on a fenced, charred hillside beside a winding dirt road" width="2000" height="1214" loading="lazy">
+            <figcaption>Mausoleum on a fire-swept hillside, Central Valley, CA</figcaption>
+          </figure>
+          <figure class="g-item" tabindex="0" style="flex: 1.778 1 0;">
+            <img src="assets/img/vp-barge.jpg" alt="Aerial view of four people sorting samples on a floating platform with a large conical sieve in green water" width="2000" height="1125" loading="lazy">
+            <figcaption>Filtering juvenile salmon, Mt. Shasta, CA</figcaption>
+          </figure>
+        </div>
+
+        <div class="g-row">
+          <figure class="g-item" tabindex="0" style="flex: 1.5 1 0;">
+            <img src="assets/img/vp-stingray.jpg" alt="A stingray resting on a seagrass bed, its yellow eye close to the camera" width="2000" height="1333" loading="lazy">
+            <figcaption><em>Hypanus americanus</em>, Turneffe Atoll, Belize</figcaption>
+          </figure>
+          <figure class="g-item" tabindex="0" style="flex: 1.48 1 0;">
+            <img src="assets/img/vp-tank.jpg" alt="A rusting amphibious vehicle covered in vines in a dark forest clearing" width="2000" height="1351" loading="lazy">
+            <figcaption>Japanese Type 95 Ha-Go light tank, Peleliu</figcaption>
+          </figure>
+        </div>
+
+        <div class="g-row">
+          <figure class="g-item" tabindex="0" style="flex: 1.5 1 0;">
+            <img src="assets/img/vp-diver.jpg" alt="A diver reaching toward a metal camera frame standing on a sandy seafloor" width="2000" height="1333" loading="lazy">
+            <figcaption>Setting a camera trap, Turneffe Atoll, Belize</figcaption>
+          </figure>
+          <figure class="g-item" tabindex="0" style="flex: 1.778 1 0;">
+            <img src="assets/img/vp-horses.jpg" alt="Four riders on horseback crossing steep tussock grassland below a cloud-covered volcano" width="2000" height="1125" loading="lazy">
+            <figcaption>Aerial survey of grasslands by horseback, Cotopaxi National Park, Ecuador</figcaption>
+          </figure>
+        </div>
+
+        <div class="g-row">
+          <figure class="g-item" tabindex="0" style="flex: 1.51 1 0;">
+            <img src="assets/img/vp-seawall.jpg" alt="A large cliffside mansion above a curved seawall with waves breaking against it" width="2000" height="1325" loading="lazy">
+            <figcaption>Sea level rise, Dana Point, CA</figcaption>
+          </figure>
+          <figure class="g-item" tabindex="0" style="flex: 1.51 1 0;">
+            <img src="assets/img/vp-fog.jpg" alt="Charred tree trunks rising into thick white fog, seen from below" width="2000" height="1325" loading="lazy">
+            <figcaption>Burned <em>Pseudotsuga menziesii</em>, Point Reyes, CA</figcaption>
+          </figure>
+        </div>
+
+        <div class="g-row">
+          <figure class="g-item" tabindex="0" style="flex: 0.827 1 0;">
+            <img src="assets/img/vp-turtle.jpg" alt="A sea turtle surfacing for air above a seagrass bed" width="1655" height="2000" loading="lazy">
+            <figcaption><em>Chelonia mydas</em>, Palau</figcaption>
+          </figure>
+          <figure class="g-item" tabindex="0" style="flex: 1.499 1 0;">
+            <img src="assets/img/vp-snorkel.jpg" alt="A snorkeler tumbling among a large school of fish above a coral reef" width="2000" height="1334" loading="lazy">
+            <figcaption>Dave and <em>Kyphosus sectatrix</em>, Turneffe Atoll, Belize</figcaption>
+          </figure>
+        </div>
+
+        <div class="g-row">
+          <figure class="g-item" tabindex="0" style="flex: 1.511 1 0;">
+            <img src="assets/img/vp-barn.jpg" alt="A weathered log barn and wooden corral fence on open plain beneath storm clouds and a jagged mountain range" width="2000" height="1325" loading="lazy">
+            <figcaption>Weathered barn, Jackson, WY</figcaption>
+          </figure>
+          <figure class="g-item" tabindex="0" style="flex: 1.509 1 0;">
+            <img src="assets/img/vp-castle.jpg" alt="A white-walled castle with striped shutters built into a cliff beneath a large cave mouth" width="2000" height="1325" loading="lazy">
+            <figcaption>Predjama Castle, Slovenia</figcaption>
+          </figure>
+        </div>
+
+        <div class="g-row">
+          <figure class="g-item" tabindex="0" style="flex: 1.51 1 0;">
+            <img src="assets/img/vp-hatchery.jpg" alt="Hands pulling out a hatchery tray crowded with small fish" width="2000" height="1325" loading="lazy">
+            <figcaption>Juvenile salmon hatchery, Mt. Shasta, CA</figcaption>
+          </figure>
+          <figure class="g-item" tabindex="0" style="flex: 1.51 1 0;">
+            <img src="assets/img/vp-shadow.jpg" alt="The triangular shadow of a mountain peak cast across a valley in early light" width="2000" height="1324" loading="lazy">
+            <figcaption>Shadow of Grand Teton over Teton Valley, Jackson, WY</figcaption>
+          </figure>
+        </div>
+
+        <div class="g-row">
+          <figure class="g-item" tabindex="0" style="flex: 1.499 1 0;">
+            <img src="assets/img/vp-leopard.jpg" alt="Close profile of a leopard's face and spotted neck, whiskers catching the light, among tall grass" width="2000" height="1334" loading="lazy">
+            <figcaption><em>Panthera pardus</em>, Maasai Mara, Kenya</figcaption>
+          </figure>
+          <figure class="g-item" tabindex="0" style="flex: 1.433 1 0;">
+            <img src="assets/img/vp-oak.jpg" alt="Sprawling valley oak branches arching against a pale sky" width="2000" height="1396" loading="lazy">
+            <figcaption><em>Quercus lobata</em>, Portola Valley, California</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTED WRITINGS -->
+    <section id="highlighted-writings" data-view="highlighted-writings" hidden>
+      <div class="writings">
+        <h2>Selected Writings</h2>
+        <article class="writing">
+          <img class="seal" src="assets/img/stanford-seal.png" alt="Stanford University seal" width="316" height="316" loading="lazy">
+          <div class="writing-text">
+            <h3><a href="https://searchworks.stanford.edu/view/vn313hw1709" target="_blank" rel="noopener">Assessing Barriers to California's Coastal Mariculture Economy: A Stakeholder Perspective Analysis</a></h3>
+            <p>Awarded the Earth Systems Award for Outstanding Research (2025)</p>
+          </div>
+        </article>
+        <article class="writing">
+          <a class="cover" href="https://andthewest.stanford.edu/author/sophia-siegel/" target="_blank" rel="noopener" aria-label="Sophia Siegel's articles at And the West">
+            <img src="assets/img/and-the-west-cover.jpg" alt="A researcher holding up seaweed over a blue aquaculture tank, the cover image for the article Could the tide be rising for American aquaculture?" loading="lazy">
+          </a>
+          <div class="writing-text">
+            <h3><a href="https://andthewest.stanford.edu/author/sophia-siegel/" target="_blank" rel="noopener">Could the tide be rising for American aquaculture?</a></h3>
+            <p>Coastlines &amp; The West, Bill Lane Center for the American West</p>
+          </div>
+        </article>
+        <article class="writing">
+          <a class="cover" href="assets/docs/fishing-drivers-manuscript.pdf" target="_blank" rel="noopener" aria-label="Open the manuscript (PDF)">
+            <img src="assets/img/fishing-drivers-map.jpg" alt="World map of FAO fishing areas overlaid with the H3 discrete global grid" loading="lazy">
+          </a>
+          <div class="writing-text">
+            <h3><a href="assets/docs/fishing-drivers-manuscript.pdf" target="_blank" rel="noopener">Environmental Drivers of Global Fishing Pattern Change: A Spatiotemporal Analysis Using Hexagonal Tessellation and Multivariate Modeling</a></h3>
+            <p>Under review at Environmental Research Letters</p>
+          </div>
+        </article>
+        <article class="writing">
+          <div class="cover">
+            <img src="assets/img/smallholder-cover.jpg" alt="A dense school of grunts and snappers facing the camera over a sandy reef" loading="lazy">
+          </div>
+          <div class="writing-text">
+            <h3>Smallholder aquaculture and institutional procurement: scaling pathways and lessons for integrating blue food into Indonesia's Makan Bergizi Gratis</h3>
+            <p>Prepared for the Center for Ocean Solutions</p>
+          </div>
+        </article>
+        <article class="writing">
+          <a class="cover" href="assets/docs/palau-msp-executive-review.pdf" target="_blank" rel="noopener" aria-label="Open the report (PDF)">
+            <img src="assets/img/picrc-logo.png" alt="Palau International Coral Reef Center (PICRC) logo" loading="lazy">
+          </a>
+          <div class="writing-text">
+            <h3><a href="assets/docs/palau-msp-executive-review.pdf" target="_blank" rel="noopener">Marine Spatial Plan for the Palau National Marine Sanctuary</a></h3>
+            <p>Executive Review of MSP Assessments and Recommendations<br>Prepared for the 12th Olbiil Era Kelulau</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>All content &copy; Sophia Siegel 2026</footer>
+</div>
+
+<script>
+  (function () {
+    var routes = ['about', 'gis-portfolio', 'gis-jakarta-cages', 'gis-ocean-carbon', 'gis-arctic-ice', 'gis-earth-engine', 'visual-portfolio', 'highlighted-writings'];
+    var views = document.querySelectorAll('[data-view]');
+    var links = document.querySelectorAll('nav a[data-route]');
+    var first = true;
+
+    function show() {
+      var h = location.hash.replace('#', '');
+      if (routes.indexOf(h) === -1) h = 'about';
+      var tab = h.indexOf('gis-') === 0 ? 'gis-portfolio' : h;
+      views.forEach(function (v) { v.hidden = v.getAttribute('data-view') !== h; });
+      document.querySelectorAll('video').forEach(function (m) {
+        var visible = !m.closest('[hidden]');
+        if (m.classList.contains('loop-video')) {
+          if (visible) { var p = m.play(); if (p && p.catch) p.catch(function () {}); }
+          else m.pause();
+        } else if (!m.paused) m.pause();
+      });
+      links.forEach(function (a) {
+        if (a.getAttribute('data-route') === tab) a.setAttribute('aria-current', 'page');
+        else a.removeAttribute('aria-current');
+      });
+      if (!first) window.scrollTo(0, 0);
+      first = false;
+    }
+    window.addEventListener('hashchange', show);
+    show();
+
+    // Globe video: remove its flat gray (242,242,242) background so it sits on any page color
+    (function () {
+      var v = document.querySelector('.loop-video');
+      if (!v) return;
+      try {
+        var S = 400, BG = 242;
+        var c = document.createElement('canvas');
+        c.className = 'loop-canvas';
+        c.width = S; c.height = S;
+        c.setAttribute('role', 'img');
+        c.setAttribute('aria-label', v.getAttribute('aria-label') || '');
+        var ctx = c.getContext('2d', { willReadFrequently: true });
+        v.parentNode.insertBefore(c, v);
+        v.parentNode.classList.add('has-canvas');
+        var last = 0;
+        function draw(t) {
+          requestAnimationFrame(draw);
+          if (t - last < 33 || v.readyState < 2 || !c.offsetParent) return;
+          if (v.paused) { var pp = v.play(); if (pp && pp.catch) pp.catch(function () {}); }
+          last = t;
+          ctx.drawImage(v, 0, 0, S, S);
+          var img = ctx.getImageData(0, 0, S, S), d = img.data;
+          for (var i = 0; i < d.length; i += 4) {
+            var r = d[i], g = d[i + 1], b = d[i + 2];
+            var m = Math.max(Math.abs(BG - r), Math.abs(BG - g), Math.abs(BG - b));
+            if (m < 4) { d[i + 3] = 0; continue; }
+            var a = m / 150; if (a > 1) a = 1;
+            if (a < 1) {
+              r = BG + (r - BG) / a; g = BG + (g - BG) / a; b = BG + (b - BG) / a;
+              d[i] = r < 0 ? 0 : r > 255 ? 255 : r;
+              d[i + 1] = g < 0 ? 0 : g > 255 ? 255 : g;
+              d[i + 2] = b < 0 ? 0 : b > 255 ? 255 : b;
+            }
+            d[i + 3] = a * 255;
+          }
+          ctx.putImageData(img, 0, 0);
+        }
+        requestAnimationFrame(draw);
+        // If the canvas can't be drawn for any reason, fall back to the plain video
+        setTimeout(function () {
+          if (!last) { c.remove(); v.parentNode.classList.remove('has-canvas'); }
+        }, 4000);
+      } catch (e) { /* the plain video stays visible */ }
+    })();
+
+    // GIS portfolio: theme filter + text search
+    var cards = document.querySelectorAll('#project-grid .card');
+    var chips = document.querySelectorAll('.chip[data-filter]');
+    var search = document.getElementById('project-search');
+    var count = document.getElementById('project-count');
+    var empty = document.getElementById('project-empty');
+    var active = 'all';
+
+    function applyFilters() {
+      var q = search.value.trim().toLowerCase();
+      var shown = 0;
+      cards.forEach(function (c) {
+        var tags = c.getAttribute('data-tags').split(',');
+        var okTag = active === 'all' || tags.indexOf(active) !== -1;
+        var okText = !q || c.textContent.toLowerCase().indexOf(q) !== -1;
+        c.hidden = !(okTag && okText);
+        if (!c.hidden) shown++;
+      });
+      count.textContent = shown + (shown === 1 ? ' project' : ' projects');
+      empty.hidden = shown !== 0;
+    }
+    chips.forEach(function (b) {
+      b.addEventListener('click', function () {
+        active = b.getAttribute('data-filter');
+        chips.forEach(function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
+        applyFilters();
+      });
+    });
+    search.addEventListener('input', applyFilters);
+  })();
+</script>
+
+</body></html>
